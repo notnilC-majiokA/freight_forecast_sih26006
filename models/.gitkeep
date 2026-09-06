@@ -1,0 +1,2 @@
+# Trained ML model artifacts (*.joblib) will be saved here by the future
+# forecasting pipeline. Kept in version control as an empty directory for now.

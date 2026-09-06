@@ -1,0 +1,7 @@
+# SIH26006 - DEMO DATA - NOT REAL MARKET DATA
+# Illustrative dry-bulk vessel classes used for bulk raw-material imports.
+vessel_type,dwt_min,dwt_max,capacity_tonnes,typical_cargo,min_port_draft_m,notes
+Handysize,10000,39999,32000,"Limestone, minor bulks",9.0,DEMO
+Supramax,40000,59999,55000,"Coking coal, limestone, iron ore parcels",11.0,DEMO
+Panamax,60000,99999,75000,"Coking coal, iron ore",13.0,DEMO
+Capesize,100000,220000,170000,"Iron ore, coking coal",17.5,DEMO

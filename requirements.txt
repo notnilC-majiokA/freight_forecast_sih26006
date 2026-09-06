@@ -1,0 +1,17 @@
+# SIH26006 - Intelligent Freight Forecasting & Vessel Chartering DSS
+# Python 3.10+ recommended.
+
+fastapi==0.115.2
+uvicorn[standard]==0.30.6
+jinja2==3.1.4
+python-multipart==0.0.9
+pydantic==2.9.2
+
+pandas==2.2.3
+numpy==2.1.2
+scikit-learn==1.5.2
+statsmodels==0.14.3
+
+PuLP==2.9.0
+reportlab==4.2.5
+joblib==1.4.2

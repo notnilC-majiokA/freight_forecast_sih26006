@@ -1,0 +1,76 @@
+# SIH26006 - DEMO DATA - NOT REAL MARKET DATA
+# Fabricated weekly voyage freight rates (USD per tonne) for the demo trade
+# lanes in routes.csv. These numbers are INVENTED for UI testing only.
+# DO NOT use for analysis, model training, benchmarking or any procurement
+# decision. Replace with validated historical freight-rate data later.
+week_start,route_id,origin_region,load_port,destination_port,cargo_type,vessel_type,freight_rate_usd_per_tonne,source
+2026-06-01,R01,Australia,Hay Point,Paradip,Coking Coal,Panamax,21.00,DEMO
+2026-06-08,R01,Australia,Hay Point,Paradip,Coking Coal,Panamax,21.40,DEMO
+2026-06-15,R01,Australia,Hay Point,Paradip,Coking Coal,Panamax,21.10,DEMO
+2026-06-22,R01,Australia,Hay Point,Paradip,Coking Coal,Panamax,22.00,DEMO
+2026-06-29,R01,Australia,Hay Point,Paradip,Coking Coal,Panamax,22.30,DEMO
+2026-07-06,R01,Australia,Hay Point,Paradip,Coking Coal,Panamax,21.80,DEMO
+2026-07-13,R01,Australia,Hay Point,Paradip,Coking Coal,Panamax,21.50,DEMO
+2026-07-20,R01,Australia,Hay Point,Paradip,Coking Coal,Panamax,22.10,DEMO
+2026-07-27,R01,Australia,Hay Point,Paradip,Coking Coal,Panamax,22.60,DEMO
+2026-08-03,R01,Australia,Hay Point,Paradip,Coking Coal,Panamax,22.20,DEMO
+2026-06-01,R03,Australia,Port Hedland,Visakhapatnam,Iron Ore,Capesize,20.50,DEMO
+2026-06-08,R03,Australia,Port Hedland,Visakhapatnam,Iron Ore,Capesize,20.10,DEMO
+2026-06-15,R03,Australia,Port Hedland,Visakhapatnam,Iron Ore,Capesize,19.80,DEMO
+2026-06-22,R03,Australia,Port Hedland,Visakhapatnam,Iron Ore,Capesize,20.90,DEMO
+2026-06-29,R03,Australia,Port Hedland,Visakhapatnam,Iron Ore,Capesize,21.30,DEMO
+2026-07-06,R03,Australia,Port Hedland,Visakhapatnam,Iron Ore,Capesize,21.00,DEMO
+2026-07-13,R03,Australia,Port Hedland,Visakhapatnam,Iron Ore,Capesize,20.60,DEMO
+2026-07-20,R03,Australia,Port Hedland,Visakhapatnam,Iron Ore,Capesize,21.40,DEMO
+2026-07-27,R03,Australia,Port Hedland,Visakhapatnam,Iron Ore,Capesize,21.90,DEMO
+2026-08-03,R03,Australia,Port Hedland,Visakhapatnam,Iron Ore,Capesize,21.50,DEMO
+2026-06-01,R05,Australia,Newcastle,Visakhapatnam,Limestone,Supramax,14.00,DEMO
+2026-06-08,R05,Australia,Newcastle,Visakhapatnam,Limestone,Supramax,14.30,DEMO
+2026-06-15,R05,Australia,Newcastle,Visakhapatnam,Limestone,Supramax,14.10,DEMO
+2026-06-22,R05,Australia,Newcastle,Visakhapatnam,Limestone,Supramax,14.60,DEMO
+2026-06-29,R05,Australia,Newcastle,Visakhapatnam,Limestone,Supramax,14.90,DEMO
+2026-07-06,R05,Australia,Newcastle,Visakhapatnam,Limestone,Supramax,14.50,DEMO
+2026-07-13,R05,Australia,Newcastle,Visakhapatnam,Limestone,Supramax,14.80,DEMO
+2026-07-20,R05,Australia,Newcastle,Visakhapatnam,Limestone,Supramax,15.20,DEMO
+2026-07-27,R05,Australia,Newcastle,Visakhapatnam,Limestone,Supramax,15.00,DEMO
+2026-08-03,R05,Australia,Newcastle,Visakhapatnam,Limestone,Supramax,15.40,DEMO
+2026-06-01,R07,Brazil,Tubarao,Visakhapatnam,Iron Ore,Capesize,26.00,DEMO
+2026-06-08,R07,Brazil,Tubarao,Visakhapatnam,Iron Ore,Capesize,25.40,DEMO
+2026-06-15,R07,Brazil,Tubarao,Visakhapatnam,Iron Ore,Capesize,25.80,DEMO
+2026-06-22,R07,Brazil,Tubarao,Visakhapatnam,Iron Ore,Capesize,26.70,DEMO
+2026-06-29,R07,Brazil,Tubarao,Visakhapatnam,Iron Ore,Capesize,27.10,DEMO
+2026-07-06,R07,Brazil,Tubarao,Visakhapatnam,Iron Ore,Capesize,26.50,DEMO
+2026-07-13,R07,Brazil,Tubarao,Visakhapatnam,Iron Ore,Capesize,26.90,DEMO
+2026-07-20,R07,Brazil,Tubarao,Visakhapatnam,Iron Ore,Capesize,27.60,DEMO
+2026-07-27,R07,Brazil,Tubarao,Visakhapatnam,Iron Ore,Capesize,27.20,DEMO
+2026-08-03,R07,Brazil,Tubarao,Visakhapatnam,Iron Ore,Capesize,27.80,DEMO
+2026-06-01,R09,South Africa,Richards Bay,Paradip,Coking Coal,Panamax,19.20,DEMO
+2026-06-08,R09,South Africa,Richards Bay,Paradip,Coking Coal,Panamax,19.60,DEMO
+2026-06-15,R09,South Africa,Richards Bay,Paradip,Coking Coal,Panamax,19.10,DEMO
+2026-06-22,R09,South Africa,Richards Bay,Paradip,Coking Coal,Panamax,20.00,DEMO
+2026-06-29,R09,South Africa,Richards Bay,Paradip,Coking Coal,Panamax,20.40,DEMO
+2026-07-06,R09,South Africa,Richards Bay,Paradip,Coking Coal,Panamax,19.90,DEMO
+2026-07-13,R09,South Africa,Richards Bay,Paradip,Coking Coal,Panamax,20.30,DEMO
+2026-07-20,R09,South Africa,Richards Bay,Paradip,Coking Coal,Panamax,20.80,DEMO
+2026-07-27,R09,South Africa,Richards Bay,Paradip,Coking Coal,Panamax,20.50,DEMO
+2026-08-03,R09,South Africa,Richards Bay,Paradip,Coking Coal,Panamax,21.00,DEMO
+2026-06-01,R10,South Africa,Saldanha Bay,Kolkata/Haldia,Iron Ore,Supramax,22.50,DEMO
+2026-06-08,R10,South Africa,Saldanha Bay,Kolkata/Haldia,Iron Ore,Supramax,22.00,DEMO
+2026-06-15,R10,South Africa,Saldanha Bay,Kolkata/Haldia,Iron Ore,Supramax,22.80,DEMO
+2026-06-22,R10,South Africa,Saldanha Bay,Kolkata/Haldia,Iron Ore,Supramax,23.20,DEMO
+2026-06-29,R10,South Africa,Saldanha Bay,Kolkata/Haldia,Iron Ore,Supramax,23.60,DEMO
+2026-07-06,R10,South Africa,Saldanha Bay,Kolkata/Haldia,Iron Ore,Supramax,23.10,DEMO
+2026-07-13,R10,South Africa,Saldanha Bay,Kolkata/Haldia,Iron Ore,Supramax,23.50,DEMO
+2026-07-20,R10,South Africa,Saldanha Bay,Kolkata/Haldia,Iron Ore,Supramax,24.00,DEMO
+2026-07-27,R10,South Africa,Saldanha Bay,Kolkata/Haldia,Iron Ore,Supramax,23.70,DEMO
+2026-08-03,R10,South Africa,Saldanha Bay,Kolkata/Haldia,Iron Ore,Supramax,24.20,DEMO
+2026-06-01,R11,Indonesia,Samarinda,Paradip,Coking Coal,Panamax,17.50,DEMO
+2026-06-08,R11,Indonesia,Samarinda,Paradip,Coking Coal,Panamax,17.90,DEMO
+2026-06-15,R11,Indonesia,Samarinda,Paradip,Coking Coal,Panamax,17.60,DEMO
+2026-06-22,R11,Indonesia,Samarinda,Paradip,Coking Coal,Panamax,18.30,DEMO
+2026-06-29,R11,Indonesia,Samarinda,Paradip,Coking Coal,Panamax,18.70,DEMO
+2026-07-06,R11,Indonesia,Samarinda,Paradip,Coking Coal,Panamax,18.20,DEMO
+2026-07-13,R11,Indonesia,Samarinda,Paradip,Coking Coal,Panamax,18.60,DEMO
+2026-07-20,R11,Indonesia,Samarinda,Paradip,Coking Coal,Panamax,19.10,DEMO
+2026-07-27,R11,Indonesia,Samarinda,Paradip,Coking Coal,Panamax,18.80,DEMO
+2026-08-03,R11,Indonesia,Samarinda,Paradip,Coking Coal,Panamax,19.30,DEMO

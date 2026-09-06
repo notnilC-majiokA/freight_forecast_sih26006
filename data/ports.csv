@@ -1,0 +1,14 @@
+# SIH26006 - DEMO DATA - NOT REAL MARKET DATA
+# East Coast of India discharge ports + overseas bulk load ports.
+# Coordinates are public geographic facts; draft figures are illustrative only.
+port_name,country,region,role,coast,latitude,longitude,max_draft_m,notes
+Paradip,India,East Coast India,discharge,East Coast India,20.2649,86.6753,18.0,DEMO illustrative draft; deep-draft capable
+Visakhapatnam,India,East Coast India,discharge,East Coast India,17.6868,83.2185,18.5,DEMO illustrative draft; deep-draft capable
+Kolkata/Haldia,India,East Coast India,discharge,East Coast India,22.0333,88.0833,8.5,DEMO draft-limited river port; Supramax max
+Hay Point,Australia,Australia,load,,-21.2833,149.2833,17.0,DEMO coking coal load port
+Port Hedland,Australia,Australia,load,,-20.3106,118.6069,19.0,DEMO iron ore load port
+Newcastle,Australia,Australia,load,,-32.9283,151.7817,15.2,DEMO coal / minor bulks load port
+Richards Bay,South Africa,South Africa,load,,-28.8000,32.0833,17.5,DEMO coal terminal
+Saldanha Bay,South Africa,South Africa,load,,-33.0117,17.9442,21.5,DEMO iron ore terminal
+Tubarao,Brazil,Brazil,load,,-20.2861,-40.2331,21.0,DEMO iron ore terminal
+Samarinda,Indonesia,Indonesia,load,,-0.5017,117.1536,14.0,DEMO Kalimantan coal load anchorage

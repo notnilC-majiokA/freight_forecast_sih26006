@@ -1,0 +1,18 @@
+# SIH26006 - DEMO DATA - NOT REAL MARKET DATA
+# Feasible trade lanes for overseas bulk raw-material imports to the East
+# Coast of India. THIS TABLE defines which origin x cargo x destination x
+# vessel combinations are allowed - not every origin can supply every cargo.
+# Replace with a validated lane dataset later (distances, transit, drafts).
+route_id,origin_region,load_port,destination_port,cargo_type,vessel_type,vessel_capacity_tonnes,approx_distance_nm,est_transit_days,notes
+R01,Australia,Hay Point,Paradip,Coking Coal,Panamax,75000,5200,17.3,DEMO
+R02,Australia,Hay Point,Visakhapatnam,Coking Coal,Panamax,75000,5100,17.0,DEMO
+R03,Australia,Port Hedland,Visakhapatnam,Iron Ore,Capesize,170000,5000,16.7,DEMO
+R04,Australia,Port Hedland,Paradip,Iron Ore,Capesize,170000,5100,17.0,DEMO
+R05,Australia,Newcastle,Visakhapatnam,Limestone,Supramax,55000,5100,17.0,DEMO
+R06,Australia,Newcastle,Paradip,Limestone,Supramax,55000,5200,17.3,DEMO
+R07,Brazil,Tubarao,Visakhapatnam,Iron Ore,Capesize,170000,8600,28.7,DEMO
+R08,Brazil,Tubarao,Paradip,Iron Ore,Capesize,170000,8700,29.0,DEMO
+R09,South Africa,Richards Bay,Paradip,Coking Coal,Panamax,75000,4200,14.0,DEMO
+R10,South Africa,Saldanha Bay,Kolkata/Haldia,Iron Ore,Supramax,55000,4300,14.3,DEMO draft-limited discharge port
+R11,Indonesia,Samarinda,Paradip,Coking Coal,Panamax,75000,3200,10.7,DEMO
+R12,Indonesia,Samarinda,Visakhapatnam,Coking Coal,Supramax,55000,3100,10.3,DEMO
