@@ -38,10 +38,10 @@
 
   <div class="container my-4">
     <div class="demo-banner rounded p-3 mb-4">
-      <strong>DEMO DATA &mdash; NOT REAL MARKET DATA.</strong> Datasets are
-      synthetic. Counts below come from the local SQLite request log and the CSV
-      files in <code>data/</code> (see <code>data/routes.csv</code> for the
-      feasible trade lanes).
+      <strong>Prototype uses synthetic/demo market and infrastructure data.</strong>
+      Production deployment would integrate validated historical, port and
+      licensed market data. Counts below come from the local SQLite request log
+      and the CSV files in <code>data/</code>.
     </div>
 
     <div id="adminError" class="alert alert-danger d-none"></div>
@@ -77,6 +77,15 @@
             <div class="text-muted small text-uppercase">Mode</div>
             <div class="h5 mt-1 mb-0" id="modeBadge">&ndash;</div>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card mb-4">
+      <div class="card-header">Loaded datasets (row counts)</div>
+      <div class="card-body">
+        <div class="row g-2" id="datasetSummary">
+          <div class="col-12 text-muted small">Loading&hellip;</div>
         </div>
       </div>
     </div>

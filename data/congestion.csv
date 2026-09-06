@@ -1,0 +1,28 @@
+# SIH26006 - SYNTHETIC / DEMONSTRATION DATA - NOT REAL CONGESTION STATISTICS
+# Demonstration port-congestion assumptions used by services/risk.py and
+# services/idle.py. congestion_factor multiplies expected in-port time;
+# avg_wait_days is an assumed pre-berth waiting time. trend is a qualitative
+# demo label. Replace with validated AIS / port-performance data later.
+port_name,congestion_factor,avg_wait_days,trend,data_class
+Hay Point,1.15,2.0,stable,SYNTHETIC_DEMO
+Dalrymple Bay,1.20,2.4,stable,SYNTHETIC_DEMO
+Port Hedland,1.25,2.6,rising,SYNTHETIC_DEMO
+Newcastle,1.10,1.6,stable,SYNTHETIC_DEMO
+Norfolk,1.20,2.2,stable,SYNTHETIC_DEMO
+Baltimore,1.25,2.5,rising,SYNTHETIC_DEMO
+New Orleans,1.30,3.0,rising,SYNTHETIC_DEMO
+Nacala,1.35,3.4,rising,SYNTHETIC_DEMO
+Maputo,1.40,3.8,rising,SYNTHETIC_DEMO
+Beira,1.55,4.6,high,SYNTHETIC_DEMO
+Vostochny,1.30,3.0,stable,SYNTHETIC_DEMO
+Vanino,1.35,3.3,stable,SYNTHETIC_DEMO
+Murmansk,1.30,3.0,stable,SYNTHETIC_DEMO
+Samarinda,1.20,2.4,stable,SYNTHETIC_DEMO
+Balikpapan,1.15,2.0,stable,SYNTHETIC_DEMO
+Paradip,1.30,3.2,rising,SYNTHETIC_DEMO
+Visakhapatnam,1.40,3.9,rising,SYNTHETIC_DEMO
+Gangavaram,1.15,1.9,stable,SYNTHETIC_DEMO
+Gopalpur,1.20,2.3,stable,SYNTHETIC_DEMO
+Dhamra,1.10,1.7,stable,SYNTHETIC_DEMO
+Sagar-Sandheads,1.55,4.8,high,SYNTHETIC_DEMO
+Haldia,1.60,5.2,high,SYNTHETIC_DEMO

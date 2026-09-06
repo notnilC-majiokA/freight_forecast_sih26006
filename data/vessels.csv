@@ -1,7 +1,10 @@
-# SIH26006 - DEMO DATA - NOT REAL MARKET DATA
-# Illustrative dry-bulk vessel classes used for bulk raw-material imports.
-vessel_type,dwt_min,dwt_max,capacity_tonnes,typical_cargo,min_port_draft_m,notes
-Handysize,10000,39999,32000,"Limestone, minor bulks",9.0,DEMO
-Supramax,40000,59999,55000,"Coking coal, limestone, iron ore parcels",11.0,DEMO
-Panamax,60000,99999,75000,"Coking coal, iron ore",13.0,DEMO
-Capesize,100000,220000,170000,"Iron ore, coking coal",17.5,DEMO
+# SIH26006 - SYNTHETIC / DEMONSTRATION DATA - NOT REAL VESSEL PARTICULARS
+# Illustrative dry-bulk vessel classes for overseas raw-material imports to
+# India's East Coast. Dimensions are representative class averages invented for
+# the prototype feasibility engine. Replace with a validated fleet/particulars
+# dataset before any real use.
+vessel_type,dwt_min,dwt_max,capacity_tonnes,loa_m,beam_m,laden_draft_m,geared,load_rate_tpd,discharge_rate_tpd,typical_commodities,data_class
+Handysize,10000,39999,32000,180,28.0,10.0,geared,16000,12000,Limestone;Coking Coal,SYNTHETIC_DEMO
+Supramax,40000,64999,56000,199,32.3,12.6,geared,24000,16000,Coking Coal;Limestone;Iron Ore,SYNTHETIC_DEMO
+Panamax,65000,99999,76000,229,32.3,14.3,gearless,34000,24000,Coking Coal;Iron Ore,SYNTHETIC_DEMO
+Capesize,100000,220000,175000,292,45.0,18.2,gearless,55000,34000,Iron Ore;Coking Coal,SYNTHETIC_DEMO

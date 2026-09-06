@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Chartering Recommendation | SIH26006</title>
+  <title>Chartering Decision | SIH26006</title>
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
     rel="stylesheet"
@@ -32,12 +32,12 @@
   <header class="app-header">
     <div class="container d-flex flex-wrap justify-content-between align-items-center gap-2">
       <div>
-        <h1 class="h4 mb-1">Recommended Chartering Strategy</h1>
+        <h1 class="h4 mb-1">Chartering Decision</h1>
         <div class="subtitle">SIH26006 | Ministry of Steel | Smart India Hackathon 2026</div>
       </div>
       <div class="d-flex gap-2">
-        <a href="/export-pdf" class="btn btn-light btn-sm" id="exportPdfBtn">Export PDF</a>
-        <a href="/export-csv" class="btn btn-light btn-sm" id="exportCsvBtn">Export CSV</a>
+        <a href="/export-pdf" class="btn btn-light btn-sm">Export PDF</a>
+        <a href="/export-csv" class="btn btn-light btn-sm">Export CSV</a>
         <a href="/" class="btn btn-outline-light btn-sm">New Scenario</a>
       </div>
     </div>
@@ -45,140 +45,186 @@
 
   <div class="container my-4">
     <div class="demo-banner rounded p-3 mb-4" id="disclaimerBanner">
-      <strong>DEMO DATA &mdash; NOT REAL MARKET DATA.</strong> Figures below are
-      synthetic and for decision-workflow demonstration only.
+      <strong>Prototype uses synthetic/demo market and infrastructure data.</strong>
+      Production deployment would integrate validated historical, port and
+      licensed market data.
     </div>
 
-    <!-- No data state -->
     <div id="noDataState" class="alert alert-warning d-none">
-      No recommendation is available yet. <a href="/">Go to the home page</a>
-      and submit a procurement scenario first.
+      No decision is available yet. <a href="/">Go to the home page</a> and run a
+      procurement scenario first.
     </div>
+    <div id="loadError" class="alert alert-danger d-none"></div>
 
     <div id="resultContent" class="d-none">
-      <!-- Scenario summary -->
-      <div class="card mb-4">
-        <div class="card-header">1. Procurement scenario</div>
-        <div class="card-body">
-          <div class="row g-3" id="scenarioSummary"></div>
-        </div>
-      </div>
 
-      <!-- Recommendation panel -->
-      <div class="recommendation-panel p-4 mb-4">
-        <div class="d-flex justify-content-between align-items-start flex-wrap gap-2 mb-3">
-          <h2 class="h5 mb-0">2. Recommended chartering strategy</h2>
-          <span class="badge bg-light text-dark confidence-badge" id="confidenceBadge">
-            Forecast confidence: &ndash;
-          </span>
+      <!-- SECTION 1 - WHAT SHOULD I DO? -->
+      <section class="rec-hero p-4 mb-4" id="recHero">
+        <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
+          <div class="text-uppercase small fw-bold" style="letter-spacing:.12em;opacity:.85;">
+            What should I do?
+          </div>
+          <span class="badge feas-badge" id="heroFeasBadge">&ndash;</span>
         </div>
+        <h2 class="h4 mt-2 mb-3" id="recHeadline">&ndash;</h2>
         <div class="row g-3">
-          <div class="col-md-6 col-lg-3">
-            <div class="metric">
-              <div class="label">Charter during</div>
-              <div class="value" id="recWeek">&ndash;</div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <div class="metric">
-              <div class="label">Origin &rarr; East Coast Indian port</div>
-              <div class="value" id="recRoute">&ndash;</div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <div class="metric">
-              <div class="label">Recommended vessel type</div>
-              <div class="value" id="recVessel">&ndash;</div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <div class="metric">
-              <div class="label">Voyages</div>
-              <div class="value" id="recVoyages">&ndash;</div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <div class="metric">
-              <div class="label">Expected freight rate</div>
-              <div class="value" id="recRate">&ndash;</div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <div class="metric">
-              <div class="label">Expected freight cost</div>
-              <div class="value" id="recTotalCost">&ndash;</div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <div class="metric">
-              <div class="label">Expected savings vs booking now</div>
-              <div class="value" id="recSavings">&ndash;</div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <div class="metric">
-              <div class="label">Delivery lead time / deadline</div>
-              <div class="value" id="recLead">&ndash;</div>
-            </div>
-          </div>
+          <div class="col-6 col-md-4 col-lg-3"><div class="hero-metric"><div class="label">Recommended action</div><div class="value" id="recAction">&ndash;</div></div></div>
+          <div class="col-6 col-md-4 col-lg-3"><div class="hero-metric"><div class="label">Entry window</div><div class="value" id="recEntry">&ndash;</div></div></div>
+          <div class="col-6 col-md-4 col-lg-3"><div class="hero-metric"><div class="label">Route</div><div class="value" id="recRoute">&ndash;</div></div></div>
+          <div class="col-6 col-md-4 col-lg-3"><div class="hero-metric"><div class="label">Vessel &amp; voyages</div><div class="value" id="recVessel">&ndash;</div></div></div>
+          <div class="col-6 col-md-4 col-lg-3"><div class="hero-metric"><div class="label">Expected freight</div><div class="value" id="recRate">&ndash;</div></div></div>
+          <div class="col-6 col-md-4 col-lg-3"><div class="hero-metric"><div class="label">Expected total cost</div><div class="value" id="recTotal">&ndash;</div></div></div>
+          <div class="col-6 col-md-4 col-lg-3"><div class="hero-metric"><div class="label">Savings vs repeated spot</div><div class="value" id="recSavings">&ndash;</div></div></div>
+          <div class="col-6 col-md-4 col-lg-3"><div class="hero-metric"><div class="label">Risk (idle / market / confidence)</div><div class="value" id="recRisk">&ndash;</div></div></div>
         </div>
+      </section>
 
-        <div class="mt-3 p-3 rounded" style="background: rgba(255,255,255,0.10);">
-          <div class="label text-uppercase small mb-1" style="letter-spacing:.05em;opacity:.85;">
-            Why this strategy
-          </div>
-          <p class="mb-2" id="recJustification">&ndash;</p>
-          <ul class="mb-0 small" id="recNotes" style="opacity:.9;"></ul>
-        </div>
-      </div>
-
-      <!-- Forecast chart -->
+      <!-- Scenario recap -->
       <div class="card mb-4">
-        <div class="card-header">3. Freight-rate forecast (weekly, DEMO)</div>
+        <div class="card-header">Procurement scenario</div>
+        <div class="card-body"><div class="row g-3" id="scenarioSummary"></div></div>
+      </div>
+
+      <!-- SECTION 2 - FREIGHT FORECAST -->
+      <div class="card mb-4">
+        <div class="card-header d-flex justify-content-between align-items-center">
+          <span>2. Freight forecast (weekly)</span>
+          <span class="text-muted small" id="forecastMeta">&ndash;</span>
+        </div>
         <div class="card-body">
-          <div class="chart-wrap">
-            <canvas id="forecastChart"></canvas>
+          <div class="chart-wrap"><canvas id="forecastChart"></canvas></div>
+          <div class="row g-2 mt-3 text-center" id="forecastStats"></div>
+        </div>
+      </div>
+
+      <!-- SECTION 3 - MARKET ENTRY TIMING -->
+      <div class="card mb-4">
+        <div class="card-header">3. Market-entry timing &mdash; charter now or wait?</div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-sm align-middle mb-0">
+              <thead><tr>
+                <th>Window</th><th class="text-end">Expected rate ($/t)</th>
+                <th class="text-end">Expected total ($)</th><th class="text-end">$/tonne</th>
+                <th class="text-end">Uncertainty</th><th>Risk</th><th>Delivery</th><th>Status</th>
+              </tr></thead>
+              <tbody id="entryBody"></tbody>
+            </table>
           </div>
         </div>
       </div>
 
-      <div class="row g-4">
-        <!-- Cost comparison -->
-        <div class="col-lg-7">
-          <div class="card h-100">
-            <div class="card-header">4. Cost comparison</div>
-            <div class="card-body">
-              <div class="table-responsive">
-                <table class="table table-sm align-middle">
-                  <thead>
-                    <tr>
-                      <th>Option</th>
-                      <th class="text-end">Rate ($/t)</th>
-                      <th class="text-end">Total cost ($)</th>
-                      <th class="text-end">&Delta; vs recommended ($)</th>
-                    </tr>
-                  </thead>
-                  <tbody id="costComparisonBody"></tbody>
-                </table>
-              </div>
-            </div>
+      <!-- SECTION 4 - VESSEL COMPARISON -->
+      <div class="card mb-4">
+        <div class="card-header">4. Vessel-type optimization &mdash; best <em>feasible</em> vessel</div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-sm align-middle mb-0">
+              <thead><tr>
+                <th>Vessel</th><th class="text-end">Capacity (t)</th><th class="text-end">Voyages</th>
+                <th class="text-end">Utilisation</th><th class="text-end">Freight ($/t)</th>
+                <th class="text-end">Total cost ($)</th><th>Port feasibility</th>
+                <th>Delivery</th><th>Op. risk</th><th>Recommendation</th>
+              </tr></thead>
+              <tbody id="vesselBody"></tbody>
+            </table>
           </div>
+          <p class="text-muted small mb-0 mt-2" id="vesselNote"></p>
         </div>
+      </div>
 
-        <!-- Route / vessel info -->
-        <div class="col-lg-5">
-          <div class="card h-100">
-            <div class="card-header">5. Route &amp; vessel</div>
-            <div class="card-body">
-              <dl class="row mb-0" id="routeInfo"></dl>
-            </div>
+      <!-- SECTION 5 - PORT FEASIBILITY -->
+      <div class="card mb-4">
+        <div class="card-header">5. Port infrastructure feasibility (origin + destination)</div>
+        <div class="card-body">
+          <div class="row g-4">
+            <div class="col-lg-6"><h3 class="h6" id="originPortTitle">Origin (load)</h3><div id="originChecks"></div></div>
+            <div class="col-lg-6"><h3 class="h6" id="destPortTitle">Destination (discharge)</h3><div id="destChecks"></div></div>
+          </div>
+          <div class="mt-3 p-3 rounded feasibility-summary" id="feasibilitySummary"></div>
+        </div>
+      </div>
+
+      <!-- SECTION 6 - CONTRACT STRATEGY -->
+      <div class="card mb-4">
+        <div class="card-header">6. Spot vs short-term MVC vs medium-term MVC</div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-sm align-middle mb-0">
+              <thead><tr>
+                <th>Strategy</th><th>Duration</th><th class="text-end">Voyages</th>
+                <th class="text-end">$/tonne</th><th class="text-end">Total cost ($)</th>
+                <th class="text-end">Savings vs spot</th><th>Risk</th><th>Feasible</th><th>Status</th>
+              </tr></thead>
+              <tbody id="contractBody"></tbody>
+            </table>
+          </div>
+          <p class="text-muted small mb-0 mt-2" id="contractNote"></p>
+        </div>
+      </div>
+
+      <!-- SECTION 7 - IDLE SCENARIO -->
+      <div class="card mb-4">
+        <div class="card-header">7. Idle scenario management</div>
+        <div class="card-body">
+          <div class="row g-3" id="idleMetrics"></div>
+          <div class="mt-3 p-3 rounded mitigation-box">
+            <div class="label text-uppercase small mb-1">Suggested mitigation</div>
+            <p class="mb-1" id="idleMitigation">&ndash;</p>
+            <p class="mb-0 small text-muted" id="idleNote">&ndash;</p>
           </div>
         </div>
       </div>
 
-      <!-- Export / navigation -->
-      <div class="card mt-4">
-        <div class="card-header">6. Export &amp; next steps</div>
+      <!-- SECTION 8 - RISK ANALYSIS -->
+      <div class="card mb-4">
+        <div class="card-header d-flex justify-content-between align-items-center">
+          <span>8. Risk analysis</span>
+          <span class="badge risk-pill" id="overallRiskBadge">&ndash;</span>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-sm align-middle mb-0">
+              <thead><tr><th>Component</th><th>Level</th><th class="text-end">Score</th><th>Rationale</th></tr></thead>
+              <tbody id="riskBody"></tbody>
+            </table>
+          </div>
+          <div class="mt-3 p-3 rounded mitigation-box">
+            <div class="label text-uppercase small mb-1">Recommended mitigation</div>
+            <ul class="mb-0" id="riskMitigation"></ul>
+          </div>
+          <p class="text-muted small mb-0 mt-2" id="riskNote"></p>
+        </div>
+      </div>
+
+      <!-- SECTION 9 - DECISION EXPLANATION -->
+      <div class="card mb-4">
+        <div class="card-header">9. Why this is recommended</div>
+        <div class="card-body">
+          <ol class="mb-0" id="decisionReasons"></ol>
+        </div>
+      </div>
+
+      <!-- Collapsible model details -->
+      <div class="card mb-4">
+        <div class="card-header">
+          <button class="btn btn-link p-0 text-decoration-none" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#modelDetails">
+            Model &amp; data details (technical) &#9662;
+          </button>
+        </div>
+        <div class="collapse" id="modelDetails">
+          <div class="card-body small">
+            <p class="mb-2"><strong>Forecasting:</strong> <span id="mdMethod">&ndash;</span></p>
+            <p class="mb-2"><strong>Lane:</strong> <span id="mdLane">&ndash;</span></p>
+            <p class="mb-2" id="mdTransparency">&ndash;</p>
+            <p class="mb-0" id="mdDisclaimer">&ndash;</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mb-4">
+        <div class="card-header">Export &amp; next steps</div>
         <div class="card-body d-flex flex-wrap gap-2">
           <a href="/export-pdf" class="btn btn-primary">Export PDF</a>
           <a href="/export-csv" class="btn btn-outline-primary">Export CSV</a>
@@ -190,7 +236,7 @@
 
   <footer class="app-footer">
     <div class="container">
-      SIH26006 &middot; Ministry of Steel &middot; prototype (DEMO data only).
+      SIH26006 &middot; Ministry of Steel &middot; prototype (synthetic / demonstration data only).
     </div>
   </footer>
 

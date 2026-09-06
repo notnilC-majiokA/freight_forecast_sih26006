@@ -3,18 +3,22 @@
     Intelligent Freight Forecasting & Vessel Chartering Decision Support System
     SIH26006 | Ministry of Steel | Smart India Hackathon 2026
 
-AI-assisted decision support for overseas bulk raw-material procurement and
-vessel chartering to India's East Coast.
+India-centric decision support for overseas industrial bulk raw-material
+procurement and vessel chartering to the East Coast of India.
 
 Run locally with:
 
     uvicorn main:app --reload
 
-Then open http://127.0.0.1:8000/ in a browser.
+Deployed with:
 
-NOTE: every number this app returns today is DEMO DATA - NOT REAL MARKET DATA,
-produced by placeholder services. See services/forecasting.py and
-services/optimizer.py for the real work that still has to be done.
+    uvicorn main:app --host 0.0.0.0 --port $PORT
+
+NOTE: every number this app returns is SYNTHETIC / DEMONSTRATION DATA - NOT REAL
+MARKET DATA. Forecasts demonstrate the architecture, not market accuracy; risk
+and feasibility scores are model-based heuristic indicators. The business logic
+lives in services/ (forecasting, port_feasibility, optimizer, contracts, idle,
+risk, recommendation, scenarios) - not in this file.
 """
 from __future__ import annotations
 
@@ -28,14 +32,19 @@ from fastapi.templating import Jinja2Templates
 
 from schemas.forecast_schema import (
     CargoType,
+    ContractPreference,
+    DeliveryWindow,
     DestinationPort,
     ForecastRequest,
     ForecastResponse,
-    OriginRegion,
+    OriginCountry,
+    VesselPreference,
+    VesselType,
 )
 from services.data_service import data_service
 from services.report_generator import forecast_to_csv, forecast_to_pdf
 from services.scenarios import InfeasibleRouteError, build_forecast_response
+from utils.helpers import DATA_TRANSPARENCY_NOTE
 
 BASE_DIR = Path(__file__).resolve().parent
 
@@ -43,19 +52,19 @@ app = FastAPI(
     title="Intelligent Freight Forecasting & Vessel Chartering DSS",
     description=(
         "SIH26006 | Ministry of Steel | Smart India Hackathon 2026. "
-        "Decision support for overseas bulk raw-material procurement and vessel "
-        "chartering to India's East Coast. Prototype - DEMO data only."
+        "Decision support for overseas industrial bulk raw-material procurement "
+        "and vessel chartering to India's East Coast. Prototype - SYNTHETIC / "
+        "DEMONSTRATION data only."
     ),
-    version="0.2.0",
+    version="0.3.0",
 )
 
-# Serve CSS / JS / images from /static, and load Jinja2 templates.
 app.mount("/static", StaticFiles(directory=BASE_DIR / "static"), name="static")
 templates = Jinja2Templates(directory=str(BASE_DIR / "templates"))
 
-# In-memory store of the most recent forecast. This is a single-user demo
-# convenience so /results, /export-csv and /export-pdf have data to show.
-# Replace with per-session or database storage later.
+# In-memory store of the most recent forecast. Single-user demo convenience so
+# /results, /export-csv and /export-pdf have data to show. Replace with
+# per-session or database storage later.
 _LAST_FORECAST: dict[str, Optional[ForecastResponse]] = {"response": None}
 
 
@@ -87,20 +96,29 @@ async def health():
 
 @app.get("/api/options")
 async def options():
-    """Dropdown values + the feasible trade lanes (from data/routes.csv)."""
+    """Dropdown values, per-country load ports, and the feasible trade lanes."""
+    origin_ports = {
+        c.value: data_service.load_ports_for_country(c.value) for c in OriginCountry
+    }
     return {
         "demo_mode": True,
-        "cargo_types": [c.value for c in CargoType],
-        "origin_regions": [o.value for o in OriginRegion],
+        "data_transparency_note": DATA_TRANSPARENCY_NOTE,
+        "commodities": [c.value for c in CargoType],
+        "origin_countries": [o.value for o in OriginCountry],
+        "origin_ports_by_country": origin_ports,
         "destination_ports": [d.value for d in DestinationPort],
+        "vessel_types": [v.value for v in VesselType],
+        "vessel_preferences": [v.value for v in VesselPreference],
+        "contract_preferences": [c.value for c in ContractPreference],
+        "delivery_windows": [int(d.value) for d in DeliveryWindow],
         "feasible_lanes": data_service.feasible_routes(),
-        "note": "DEMO DATA - NOT REAL MARKET DATA",
+        "note": "SYNTHETIC / DEMONSTRATION DATA - NOT REAL MARKET DATA",
     }
 
 
 @app.post("/forecast", response_model=ForecastResponse)
 async def forecast(payload: ForecastRequest):
-    """Validate the scenario and return the DEMO lowest expected-cost strategy."""
+    """Validate the scenario and return the full DEMO decision-support response."""
     try:
         response = build_forecast_response(payload)
     except InfeasibleRouteError as exc:
@@ -131,8 +149,10 @@ async def admin_status():
     """System-status payload for the admin dashboard."""
     return {
         "demo_mode": True,
+        "data_transparency_note": DATA_TRANSPARENCY_NOTE,
         "data_last_updated": data_service.data_last_updated(),
         "route_count": data_service.route_count(),
+        "dataset_summary": data_service.dataset_summary(),
         "forecast_request_count": data_service.forecast_request_count(),
         "recent_forecast_requests": data_service.recent_forecast_requests(10),
     }
@@ -149,7 +169,7 @@ async def export_csv():
     return Response(
         content=forecast_to_csv(response),
         media_type="text/csv",
-        headers={"Content-Disposition": "attachment; filename=sih26006_chartering_strategy_demo.csv"},
+        headers={"Content-Disposition": "attachment; filename=sih26006_chartering_decision_demo.csv"},
     )
 
 
@@ -161,5 +181,5 @@ async def export_pdf():
     return Response(
         content=forecast_to_pdf(response),
         media_type="application/pdf",
-        headers={"Content-Disposition": "attachment; filename=sih26006_chartering_strategy_demo.pdf"},
+        headers={"Content-Disposition": "attachment; filename=sih26006_chartering_decision_demo.pdf"},
     )

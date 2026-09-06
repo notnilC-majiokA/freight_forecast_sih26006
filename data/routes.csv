@@ -1,18 +1,37 @@
-# SIH26006 - DEMO DATA - NOT REAL MARKET DATA
-# Feasible trade lanes for overseas bulk raw-material imports to the East
-# Coast of India. THIS TABLE defines which origin x cargo x destination x
-# vessel combinations are allowed - not every origin can supply every cargo.
-# Replace with a validated lane dataset later (distances, transit, drafts).
-route_id,origin_region,load_port,destination_port,cargo_type,vessel_type,vessel_capacity_tonnes,approx_distance_nm,est_transit_days,notes
-R01,Australia,Hay Point,Paradip,Coking Coal,Panamax,75000,5200,17.3,DEMO
-R02,Australia,Hay Point,Visakhapatnam,Coking Coal,Panamax,75000,5100,17.0,DEMO
-R03,Australia,Port Hedland,Visakhapatnam,Iron Ore,Capesize,170000,5000,16.7,DEMO
-R04,Australia,Port Hedland,Paradip,Iron Ore,Capesize,170000,5100,17.0,DEMO
-R05,Australia,Newcastle,Visakhapatnam,Limestone,Supramax,55000,5100,17.0,DEMO
-R06,Australia,Newcastle,Paradip,Limestone,Supramax,55000,5200,17.3,DEMO
-R07,Brazil,Tubarao,Visakhapatnam,Iron Ore,Capesize,170000,8600,28.7,DEMO
-R08,Brazil,Tubarao,Paradip,Iron Ore,Capesize,170000,8700,29.0,DEMO
-R09,South Africa,Richards Bay,Paradip,Coking Coal,Panamax,75000,4200,14.0,DEMO
-R10,South Africa,Saldanha Bay,Kolkata/Haldia,Iron Ore,Supramax,55000,4300,14.3,DEMO draft-limited discharge port
-R11,Indonesia,Samarinda,Paradip,Coking Coal,Panamax,75000,3200,10.7,DEMO
-R12,Indonesia,Samarinda,Visakhapatnam,Coking Coal,Supramax,55000,3100,10.3,DEMO
+# SIH26006 - SYNTHETIC / DEMONSTRATION DATA - NOT REAL TRADE-LANE DATA
+# Feasible overseas -> East Coast India bulk raw-material lanes considered by the
+# prototype. THIS TABLE defines which origin x cargo x destination combinations
+# are allowed (not every origin supplies every cargo to every port). Distance and
+# transit are illustrative great-circle estimates at ~12.5 kn. Vessel choice is
+# NOT fixed here - services/port_feasibility.py + services/optimizer.py evaluate
+# every vessel class per lane. Replace with a validated lane dataset later.
+route_id,origin_country,load_port,destination_port,cargo_type,approx_distance_nm,est_transit_days,reference_rate_usd_per_tonne,data_class
+R01,Australia,Hay Point,Paradip,Coking Coal,5250,17.5,21.5,SYNTHETIC_DEMO
+R02,Australia,Hay Point,Visakhapatnam,Coking Coal,5150,17.2,21.0,SYNTHETIC_DEMO
+R03,Australia,Dalrymple Bay,Gangavaram,Coking Coal,5200,17.3,21.2,SYNTHETIC_DEMO
+R04,Australia,Hay Point,Dhamra,Coking Coal,5300,17.7,21.7,SYNTHETIC_DEMO
+R05,Australia,Port Hedland,Visakhapatnam,Iron Ore,4950,16.5,19.8,SYNTHETIC_DEMO
+R06,Australia,Port Hedland,Gangavaram,Iron Ore,5000,16.7,19.9,SYNTHETIC_DEMO
+R07,Australia,Port Hedland,Paradip,Iron Ore,5100,17.0,20.3,SYNTHETIC_DEMO
+R08,Australia,Port Hedland,Dhamra,Iron Ore,5150,17.2,20.5,SYNTHETIC_DEMO
+R09,Australia,Newcastle,Gopalpur,Limestone,5200,17.3,15.4,SYNTHETIC_DEMO
+R10,Australia,Newcastle,Visakhapatnam,Limestone,5100,17.0,15.1,SYNTHETIC_DEMO
+R11,United States,Norfolk,Paradip,Coking Coal,11800,36.0,37.5,SYNTHETIC_DEMO
+R12,United States,Norfolk,Visakhapatnam,Coking Coal,11700,35.6,37.0,SYNTHETIC_DEMO
+R13,United States,Baltimore,Haldia,Iron Ore,11200,34.2,35.5,SYNTHETIC_DEMO
+R14,United States,Baltimore,Visakhapatnam,Iron Ore,11600,35.3,36.4,SYNTHETIC_DEMO
+R15,Mozambique,Nacala,Visakhapatnam,Coking Coal,4500,15.0,18.6,SYNTHETIC_DEMO
+R16,Mozambique,Nacala,Paradip,Coking Coal,4650,15.5,19.0,SYNTHETIC_DEMO
+R17,Mozambique,Nacala,Gangavaram,Coking Coal,4550,15.2,18.7,SYNTHETIC_DEMO
+R18,Mozambique,Maputo,Visakhapatnam,Coking Coal,4850,16.2,19.6,SYNTHETIC_DEMO
+R19,Russia,Vostochny,Visakhapatnam,Coking Coal,5600,18.7,21.8,SYNTHETIC_DEMO
+R20,Russia,Vostochny,Paradip,Coking Coal,5500,18.3,21.5,SYNTHETIC_DEMO
+R21,Russia,Vanino,Gangavaram,Iron Ore,5650,18.8,21.9,SYNTHETIC_DEMO
+R22,Russia,Vanino,Dhamra,Iron Ore,5700,19.0,22.1,SYNTHETIC_DEMO
+R23,Indonesia,Samarinda,Paradip,Coking Coal,3250,10.8,14.2,SYNTHETIC_DEMO
+R24,Indonesia,Balikpapan,Visakhapatnam,Coking Coal,3150,10.5,13.9,SYNTHETIC_DEMO
+R25,Indonesia,Samarinda,Haldia,Coking Coal,3450,11.5,14.8,SYNTHETIC_DEMO
+R26,Indonesia,Samarinda,Sagar-Sandheads,Coking Coal,3400,11.3,14.6,SYNTHETIC_DEMO
+R27,Indonesia,Balikpapan,Dhamra,Limestone,3300,11.0,13.6,SYNTHETIC_DEMO
+R28,Indonesia,Samarinda,Gopalpur,Limestone,3350,11.2,13.8,SYNTHETIC_DEMO
+R29,Indonesia,Balikpapan,Paradip,Limestone,3250,10.8,13.4,SYNTHETIC_DEMO

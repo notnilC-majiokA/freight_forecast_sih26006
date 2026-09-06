@@ -40,6 +40,26 @@
     });
   }
 
+  function renderDatasets(summary) {
+    const wrap = document.getElementById("datasetSummary");
+    if (!wrap) return;
+    const entries = Object.keys(summary);
+    if (!entries.length) {
+      wrap.innerHTML = '<div class="col-12 text-muted small">No datasets reported.</div>';
+      return;
+    }
+    wrap.innerHTML = entries
+      .map(function (k) {
+        return (
+          '<div class="col-6 col-md-3"><div class="border rounded p-2">' +
+          '<div class="text-muted small text-uppercase">' + k.replace(/_/g, " ") + "</div>" +
+          '<div class="fw-semibold">' + Number(summary[k]).toLocaleString("en-US") + " rows</div>" +
+          "</div></div>"
+        );
+      })
+      .join("");
+  }
+
   async function load() {
     errorBox.classList.add("d-none");
     try {
@@ -54,6 +74,7 @@
       setText("routeCount", data.route_count);
       setText("requestCount", data.forecast_request_count);
       setText("modeBadge", data.demo_mode ? "DEMO" : "LIVE");
+      renderDatasets(data.dataset_summary || {});
       renderRecent(data.recent_forecast_requests);
     } catch (err) {
       errorBox.textContent = "Could not load system status: " + err.message;

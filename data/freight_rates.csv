@@ -1,76 +1,586 @@
-# SIH26006 - DEMO DATA - NOT REAL MARKET DATA
-# Fabricated weekly voyage freight rates (USD per tonne) for the demo trade
-# lanes in routes.csv. These numbers are INVENTED for UI testing only.
-# DO NOT use for analysis, model training, benchmarking or any procurement
-# decision. Replace with validated historical freight-rate data later.
-week_start,route_id,origin_region,load_port,destination_port,cargo_type,vessel_type,freight_rate_usd_per_tonne,source
-2026-06-01,R01,Australia,Hay Point,Paradip,Coking Coal,Panamax,21.00,DEMO
-2026-06-08,R01,Australia,Hay Point,Paradip,Coking Coal,Panamax,21.40,DEMO
-2026-06-15,R01,Australia,Hay Point,Paradip,Coking Coal,Panamax,21.10,DEMO
-2026-06-22,R01,Australia,Hay Point,Paradip,Coking Coal,Panamax,22.00,DEMO
-2026-06-29,R01,Australia,Hay Point,Paradip,Coking Coal,Panamax,22.30,DEMO
-2026-07-06,R01,Australia,Hay Point,Paradip,Coking Coal,Panamax,21.80,DEMO
-2026-07-13,R01,Australia,Hay Point,Paradip,Coking Coal,Panamax,21.50,DEMO
-2026-07-20,R01,Australia,Hay Point,Paradip,Coking Coal,Panamax,22.10,DEMO
-2026-07-27,R01,Australia,Hay Point,Paradip,Coking Coal,Panamax,22.60,DEMO
-2026-08-03,R01,Australia,Hay Point,Paradip,Coking Coal,Panamax,22.20,DEMO
-2026-06-01,R03,Australia,Port Hedland,Visakhapatnam,Iron Ore,Capesize,20.50,DEMO
-2026-06-08,R03,Australia,Port Hedland,Visakhapatnam,Iron Ore,Capesize,20.10,DEMO
-2026-06-15,R03,Australia,Port Hedland,Visakhapatnam,Iron Ore,Capesize,19.80,DEMO
-2026-06-22,R03,Australia,Port Hedland,Visakhapatnam,Iron Ore,Capesize,20.90,DEMO
-2026-06-29,R03,Australia,Port Hedland,Visakhapatnam,Iron Ore,Capesize,21.30,DEMO
-2026-07-06,R03,Australia,Port Hedland,Visakhapatnam,Iron Ore,Capesize,21.00,DEMO
-2026-07-13,R03,Australia,Port Hedland,Visakhapatnam,Iron Ore,Capesize,20.60,DEMO
-2026-07-20,R03,Australia,Port Hedland,Visakhapatnam,Iron Ore,Capesize,21.40,DEMO
-2026-07-27,R03,Australia,Port Hedland,Visakhapatnam,Iron Ore,Capesize,21.90,DEMO
-2026-08-03,R03,Australia,Port Hedland,Visakhapatnam,Iron Ore,Capesize,21.50,DEMO
-2026-06-01,R05,Australia,Newcastle,Visakhapatnam,Limestone,Supramax,14.00,DEMO
-2026-06-08,R05,Australia,Newcastle,Visakhapatnam,Limestone,Supramax,14.30,DEMO
-2026-06-15,R05,Australia,Newcastle,Visakhapatnam,Limestone,Supramax,14.10,DEMO
-2026-06-22,R05,Australia,Newcastle,Visakhapatnam,Limestone,Supramax,14.60,DEMO
-2026-06-29,R05,Australia,Newcastle,Visakhapatnam,Limestone,Supramax,14.90,DEMO
-2026-07-06,R05,Australia,Newcastle,Visakhapatnam,Limestone,Supramax,14.50,DEMO
-2026-07-13,R05,Australia,Newcastle,Visakhapatnam,Limestone,Supramax,14.80,DEMO
-2026-07-20,R05,Australia,Newcastle,Visakhapatnam,Limestone,Supramax,15.20,DEMO
-2026-07-27,R05,Australia,Newcastle,Visakhapatnam,Limestone,Supramax,15.00,DEMO
-2026-08-03,R05,Australia,Newcastle,Visakhapatnam,Limestone,Supramax,15.40,DEMO
-2026-06-01,R07,Brazil,Tubarao,Visakhapatnam,Iron Ore,Capesize,26.00,DEMO
-2026-06-08,R07,Brazil,Tubarao,Visakhapatnam,Iron Ore,Capesize,25.40,DEMO
-2026-06-15,R07,Brazil,Tubarao,Visakhapatnam,Iron Ore,Capesize,25.80,DEMO
-2026-06-22,R07,Brazil,Tubarao,Visakhapatnam,Iron Ore,Capesize,26.70,DEMO
-2026-06-29,R07,Brazil,Tubarao,Visakhapatnam,Iron Ore,Capesize,27.10,DEMO
-2026-07-06,R07,Brazil,Tubarao,Visakhapatnam,Iron Ore,Capesize,26.50,DEMO
-2026-07-13,R07,Brazil,Tubarao,Visakhapatnam,Iron Ore,Capesize,26.90,DEMO
-2026-07-20,R07,Brazil,Tubarao,Visakhapatnam,Iron Ore,Capesize,27.60,DEMO
-2026-07-27,R07,Brazil,Tubarao,Visakhapatnam,Iron Ore,Capesize,27.20,DEMO
-2026-08-03,R07,Brazil,Tubarao,Visakhapatnam,Iron Ore,Capesize,27.80,DEMO
-2026-06-01,R09,South Africa,Richards Bay,Paradip,Coking Coal,Panamax,19.20,DEMO
-2026-06-08,R09,South Africa,Richards Bay,Paradip,Coking Coal,Panamax,19.60,DEMO
-2026-06-15,R09,South Africa,Richards Bay,Paradip,Coking Coal,Panamax,19.10,DEMO
-2026-06-22,R09,South Africa,Richards Bay,Paradip,Coking Coal,Panamax,20.00,DEMO
-2026-06-29,R09,South Africa,Richards Bay,Paradip,Coking Coal,Panamax,20.40,DEMO
-2026-07-06,R09,South Africa,Richards Bay,Paradip,Coking Coal,Panamax,19.90,DEMO
-2026-07-13,R09,South Africa,Richards Bay,Paradip,Coking Coal,Panamax,20.30,DEMO
-2026-07-20,R09,South Africa,Richards Bay,Paradip,Coking Coal,Panamax,20.80,DEMO
-2026-07-27,R09,South Africa,Richards Bay,Paradip,Coking Coal,Panamax,20.50,DEMO
-2026-08-03,R09,South Africa,Richards Bay,Paradip,Coking Coal,Panamax,21.00,DEMO
-2026-06-01,R10,South Africa,Saldanha Bay,Kolkata/Haldia,Iron Ore,Supramax,22.50,DEMO
-2026-06-08,R10,South Africa,Saldanha Bay,Kolkata/Haldia,Iron Ore,Supramax,22.00,DEMO
-2026-06-15,R10,South Africa,Saldanha Bay,Kolkata/Haldia,Iron Ore,Supramax,22.80,DEMO
-2026-06-22,R10,South Africa,Saldanha Bay,Kolkata/Haldia,Iron Ore,Supramax,23.20,DEMO
-2026-06-29,R10,South Africa,Saldanha Bay,Kolkata/Haldia,Iron Ore,Supramax,23.60,DEMO
-2026-07-06,R10,South Africa,Saldanha Bay,Kolkata/Haldia,Iron Ore,Supramax,23.10,DEMO
-2026-07-13,R10,South Africa,Saldanha Bay,Kolkata/Haldia,Iron Ore,Supramax,23.50,DEMO
-2026-07-20,R10,South Africa,Saldanha Bay,Kolkata/Haldia,Iron Ore,Supramax,24.00,DEMO
-2026-07-27,R10,South Africa,Saldanha Bay,Kolkata/Haldia,Iron Ore,Supramax,23.70,DEMO
-2026-08-03,R10,South Africa,Saldanha Bay,Kolkata/Haldia,Iron Ore,Supramax,24.20,DEMO
-2026-06-01,R11,Indonesia,Samarinda,Paradip,Coking Coal,Panamax,17.50,DEMO
-2026-06-08,R11,Indonesia,Samarinda,Paradip,Coking Coal,Panamax,17.90,DEMO
-2026-06-15,R11,Indonesia,Samarinda,Paradip,Coking Coal,Panamax,17.60,DEMO
-2026-06-22,R11,Indonesia,Samarinda,Paradip,Coking Coal,Panamax,18.30,DEMO
-2026-06-29,R11,Indonesia,Samarinda,Paradip,Coking Coal,Panamax,18.70,DEMO
-2026-07-06,R11,Indonesia,Samarinda,Paradip,Coking Coal,Panamax,18.20,DEMO
-2026-07-13,R11,Indonesia,Samarinda,Paradip,Coking Coal,Panamax,18.60,DEMO
-2026-07-20,R11,Indonesia,Samarinda,Paradip,Coking Coal,Panamax,19.10,DEMO
-2026-07-27,R11,Indonesia,Samarinda,Paradip,Coking Coal,Panamax,18.80,DEMO
-2026-08-03,R11,Indonesia,Samarinda,Paradip,Coking Coal,Panamax,19.30,DEMO
+# SIH26006 - SYNTHETIC / DEMONSTRATION DATA - NOT REAL FREIGHT RATES
+# Fabricated weekly voyage freight rates (USD/tonne) per lane in routes.csv,
+# generated by a seeded random process for the prototype forecasting demo.
+# They demonstrate the forecasting architecture, NOT real market accuracy.
+# Do NOT use for analysis, model training, benchmarking or procurement.
+week_start,route_id,origin_country,load_port,destination_port,cargo_type,freight_rate_usd_per_tonne,data_class
+2026-04-13,R01,Australia,Hay Point,Paradip,Coking Coal,20.46,SYNTHETIC_DEMO
+2026-04-20,R01,Australia,Hay Point,Paradip,Coking Coal,21.26,SYNTHETIC_DEMO
+2026-04-27,R01,Australia,Hay Point,Paradip,Coking Coal,20.45,SYNTHETIC_DEMO
+2026-05-04,R01,Australia,Hay Point,Paradip,Coking Coal,20.21,SYNTHETIC_DEMO
+2026-05-11,R01,Australia,Hay Point,Paradip,Coking Coal,21.55,SYNTHETIC_DEMO
+2026-05-18,R01,Australia,Hay Point,Paradip,Coking Coal,20.81,SYNTHETIC_DEMO
+2026-05-25,R01,Australia,Hay Point,Paradip,Coking Coal,22.34,SYNTHETIC_DEMO
+2026-06-01,R01,Australia,Hay Point,Paradip,Coking Coal,21.18,SYNTHETIC_DEMO
+2026-06-08,R01,Australia,Hay Point,Paradip,Coking Coal,22.08,SYNTHETIC_DEMO
+2026-06-15,R01,Australia,Hay Point,Paradip,Coking Coal,21.75,SYNTHETIC_DEMO
+2026-06-22,R01,Australia,Hay Point,Paradip,Coking Coal,21.77,SYNTHETIC_DEMO
+2026-06-29,R01,Australia,Hay Point,Paradip,Coking Coal,22.20,SYNTHETIC_DEMO
+2026-07-06,R01,Australia,Hay Point,Paradip,Coking Coal,20.86,SYNTHETIC_DEMO
+2026-07-13,R01,Australia,Hay Point,Paradip,Coking Coal,20.80,SYNTHETIC_DEMO
+2026-07-20,R01,Australia,Hay Point,Paradip,Coking Coal,19.92,SYNTHETIC_DEMO
+2026-07-27,R01,Australia,Hay Point,Paradip,Coking Coal,20.10,SYNTHETIC_DEMO
+2026-08-03,R01,Australia,Hay Point,Paradip,Coking Coal,20.53,SYNTHETIC_DEMO
+2026-08-10,R01,Australia,Hay Point,Paradip,Coking Coal,19.74,SYNTHETIC_DEMO
+2026-08-17,R01,Australia,Hay Point,Paradip,Coking Coal,21.47,SYNTHETIC_DEMO
+2026-08-24,R01,Australia,Hay Point,Paradip,Coking Coal,21.42,SYNTHETIC_DEMO
+2026-04-13,R02,Australia,Hay Point,Visakhapatnam,Coking Coal,20.01,SYNTHETIC_DEMO
+2026-04-20,R02,Australia,Hay Point,Visakhapatnam,Coking Coal,20.79,SYNTHETIC_DEMO
+2026-04-27,R02,Australia,Hay Point,Visakhapatnam,Coking Coal,21.10,SYNTHETIC_DEMO
+2026-05-04,R02,Australia,Hay Point,Visakhapatnam,Coking Coal,21.40,SYNTHETIC_DEMO
+2026-05-11,R02,Australia,Hay Point,Visakhapatnam,Coking Coal,21.58,SYNTHETIC_DEMO
+2026-05-18,R02,Australia,Hay Point,Visakhapatnam,Coking Coal,21.82,SYNTHETIC_DEMO
+2026-05-25,R02,Australia,Hay Point,Visakhapatnam,Coking Coal,22.41,SYNTHETIC_DEMO
+2026-06-01,R02,Australia,Hay Point,Visakhapatnam,Coking Coal,22.71,SYNTHETIC_DEMO
+2026-06-08,R02,Australia,Hay Point,Visakhapatnam,Coking Coal,22.57,SYNTHETIC_DEMO
+2026-06-15,R02,Australia,Hay Point,Visakhapatnam,Coking Coal,21.89,SYNTHETIC_DEMO
+2026-06-22,R02,Australia,Hay Point,Visakhapatnam,Coking Coal,20.75,SYNTHETIC_DEMO
+2026-06-29,R02,Australia,Hay Point,Visakhapatnam,Coking Coal,21.46,SYNTHETIC_DEMO
+2026-07-06,R02,Australia,Hay Point,Visakhapatnam,Coking Coal,20.57,SYNTHETIC_DEMO
+2026-07-13,R02,Australia,Hay Point,Visakhapatnam,Coking Coal,20.70,SYNTHETIC_DEMO
+2026-07-20,R02,Australia,Hay Point,Visakhapatnam,Coking Coal,20.96,SYNTHETIC_DEMO
+2026-07-27,R02,Australia,Hay Point,Visakhapatnam,Coking Coal,21.01,SYNTHETIC_DEMO
+2026-08-03,R02,Australia,Hay Point,Visakhapatnam,Coking Coal,21.22,SYNTHETIC_DEMO
+2026-08-10,R02,Australia,Hay Point,Visakhapatnam,Coking Coal,22.74,SYNTHETIC_DEMO
+2026-08-17,R02,Australia,Hay Point,Visakhapatnam,Coking Coal,22.28,SYNTHETIC_DEMO
+2026-08-24,R02,Australia,Hay Point,Visakhapatnam,Coking Coal,23.12,SYNTHETIC_DEMO
+2026-04-13,R03,Australia,Dalrymple Bay,Gangavaram,Coking Coal,21.98,SYNTHETIC_DEMO
+2026-04-20,R03,Australia,Dalrymple Bay,Gangavaram,Coking Coal,21.69,SYNTHETIC_DEMO
+2026-04-27,R03,Australia,Dalrymple Bay,Gangavaram,Coking Coal,19.91,SYNTHETIC_DEMO
+2026-05-04,R03,Australia,Dalrymple Bay,Gangavaram,Coking Coal,21.14,SYNTHETIC_DEMO
+2026-05-11,R03,Australia,Dalrymple Bay,Gangavaram,Coking Coal,19.69,SYNTHETIC_DEMO
+2026-05-18,R03,Australia,Dalrymple Bay,Gangavaram,Coking Coal,20.83,SYNTHETIC_DEMO
+2026-05-25,R03,Australia,Dalrymple Bay,Gangavaram,Coking Coal,20.81,SYNTHETIC_DEMO
+2026-06-01,R03,Australia,Dalrymple Bay,Gangavaram,Coking Coal,20.91,SYNTHETIC_DEMO
+2026-06-08,R03,Australia,Dalrymple Bay,Gangavaram,Coking Coal,20.74,SYNTHETIC_DEMO
+2026-06-15,R03,Australia,Dalrymple Bay,Gangavaram,Coking Coal,21.67,SYNTHETIC_DEMO
+2026-06-22,R03,Australia,Dalrymple Bay,Gangavaram,Coking Coal,21.65,SYNTHETIC_DEMO
+2026-06-29,R03,Australia,Dalrymple Bay,Gangavaram,Coking Coal,21.75,SYNTHETIC_DEMO
+2026-07-06,R03,Australia,Dalrymple Bay,Gangavaram,Coking Coal,21.86,SYNTHETIC_DEMO
+2026-07-13,R03,Australia,Dalrymple Bay,Gangavaram,Coking Coal,21.15,SYNTHETIC_DEMO
+2026-07-20,R03,Australia,Dalrymple Bay,Gangavaram,Coking Coal,21.63,SYNTHETIC_DEMO
+2026-07-27,R03,Australia,Dalrymple Bay,Gangavaram,Coking Coal,20.08,SYNTHETIC_DEMO
+2026-08-03,R03,Australia,Dalrymple Bay,Gangavaram,Coking Coal,20.97,SYNTHETIC_DEMO
+2026-08-10,R03,Australia,Dalrymple Bay,Gangavaram,Coking Coal,20.72,SYNTHETIC_DEMO
+2026-08-17,R03,Australia,Dalrymple Bay,Gangavaram,Coking Coal,20.37,SYNTHETIC_DEMO
+2026-08-24,R03,Australia,Dalrymple Bay,Gangavaram,Coking Coal,19.45,SYNTHETIC_DEMO
+2026-04-13,R04,Australia,Hay Point,Dhamra,Coking Coal,22.75,SYNTHETIC_DEMO
+2026-04-20,R04,Australia,Hay Point,Dhamra,Coking Coal,23.27,SYNTHETIC_DEMO
+2026-04-27,R04,Australia,Hay Point,Dhamra,Coking Coal,22.33,SYNTHETIC_DEMO
+2026-05-04,R04,Australia,Hay Point,Dhamra,Coking Coal,22.20,SYNTHETIC_DEMO
+2026-05-11,R04,Australia,Hay Point,Dhamra,Coking Coal,21.81,SYNTHETIC_DEMO
+2026-05-18,R04,Australia,Hay Point,Dhamra,Coking Coal,21.26,SYNTHETIC_DEMO
+2026-05-25,R04,Australia,Hay Point,Dhamra,Coking Coal,21.24,SYNTHETIC_DEMO
+2026-06-01,R04,Australia,Hay Point,Dhamra,Coking Coal,21.65,SYNTHETIC_DEMO
+2026-06-08,R04,Australia,Hay Point,Dhamra,Coking Coal,22.11,SYNTHETIC_DEMO
+2026-06-15,R04,Australia,Hay Point,Dhamra,Coking Coal,21.96,SYNTHETIC_DEMO
+2026-06-22,R04,Australia,Hay Point,Dhamra,Coking Coal,22.22,SYNTHETIC_DEMO
+2026-06-29,R04,Australia,Hay Point,Dhamra,Coking Coal,23.59,SYNTHETIC_DEMO
+2026-07-06,R04,Australia,Hay Point,Dhamra,Coking Coal,23.33,SYNTHETIC_DEMO
+2026-07-13,R04,Australia,Hay Point,Dhamra,Coking Coal,23.85,SYNTHETIC_DEMO
+2026-07-20,R04,Australia,Hay Point,Dhamra,Coking Coal,24.31,SYNTHETIC_DEMO
+2026-07-27,R04,Australia,Hay Point,Dhamra,Coking Coal,23.94,SYNTHETIC_DEMO
+2026-08-03,R04,Australia,Hay Point,Dhamra,Coking Coal,24.11,SYNTHETIC_DEMO
+2026-08-10,R04,Australia,Hay Point,Dhamra,Coking Coal,23.95,SYNTHETIC_DEMO
+2026-08-17,R04,Australia,Hay Point,Dhamra,Coking Coal,22.89,SYNTHETIC_DEMO
+2026-08-24,R04,Australia,Hay Point,Dhamra,Coking Coal,22.70,SYNTHETIC_DEMO
+2026-04-13,R05,Australia,Port Hedland,Visakhapatnam,Iron Ore,20.74,SYNTHETIC_DEMO
+2026-04-20,R05,Australia,Port Hedland,Visakhapatnam,Iron Ore,19.15,SYNTHETIC_DEMO
+2026-04-27,R05,Australia,Port Hedland,Visakhapatnam,Iron Ore,20.02,SYNTHETIC_DEMO
+2026-05-04,R05,Australia,Port Hedland,Visakhapatnam,Iron Ore,19.48,SYNTHETIC_DEMO
+2026-05-11,R05,Australia,Port Hedland,Visakhapatnam,Iron Ore,19.68,SYNTHETIC_DEMO
+2026-05-18,R05,Australia,Port Hedland,Visakhapatnam,Iron Ore,20.44,SYNTHETIC_DEMO
+2026-05-25,R05,Australia,Port Hedland,Visakhapatnam,Iron Ore,19.40,SYNTHETIC_DEMO
+2026-06-01,R05,Australia,Port Hedland,Visakhapatnam,Iron Ore,18.74,SYNTHETIC_DEMO
+2026-06-08,R05,Australia,Port Hedland,Visakhapatnam,Iron Ore,19.66,SYNTHETIC_DEMO
+2026-06-15,R05,Australia,Port Hedland,Visakhapatnam,Iron Ore,20.24,SYNTHETIC_DEMO
+2026-06-22,R05,Australia,Port Hedland,Visakhapatnam,Iron Ore,20.04,SYNTHETIC_DEMO
+2026-06-29,R05,Australia,Port Hedland,Visakhapatnam,Iron Ore,20.54,SYNTHETIC_DEMO
+2026-07-06,R05,Australia,Port Hedland,Visakhapatnam,Iron Ore,20.47,SYNTHETIC_DEMO
+2026-07-13,R05,Australia,Port Hedland,Visakhapatnam,Iron Ore,20.58,SYNTHETIC_DEMO
+2026-07-20,R05,Australia,Port Hedland,Visakhapatnam,Iron Ore,20.39,SYNTHETIC_DEMO
+2026-07-27,R05,Australia,Port Hedland,Visakhapatnam,Iron Ore,20.24,SYNTHETIC_DEMO
+2026-08-03,R05,Australia,Port Hedland,Visakhapatnam,Iron Ore,20.17,SYNTHETIC_DEMO
+2026-08-10,R05,Australia,Port Hedland,Visakhapatnam,Iron Ore,19.82,SYNTHETIC_DEMO
+2026-08-17,R05,Australia,Port Hedland,Visakhapatnam,Iron Ore,19.26,SYNTHETIC_DEMO
+2026-08-24,R05,Australia,Port Hedland,Visakhapatnam,Iron Ore,19.67,SYNTHETIC_DEMO
+2026-04-13,R06,Australia,Port Hedland,Gangavaram,Iron Ore,20.32,SYNTHETIC_DEMO
+2026-04-20,R06,Australia,Port Hedland,Gangavaram,Iron Ore,19.23,SYNTHETIC_DEMO
+2026-04-27,R06,Australia,Port Hedland,Gangavaram,Iron Ore,19.46,SYNTHETIC_DEMO
+2026-05-04,R06,Australia,Port Hedland,Gangavaram,Iron Ore,18.73,SYNTHETIC_DEMO
+2026-05-11,R06,Australia,Port Hedland,Gangavaram,Iron Ore,19.37,SYNTHETIC_DEMO
+2026-05-18,R06,Australia,Port Hedland,Gangavaram,Iron Ore,19.23,SYNTHETIC_DEMO
+2026-05-25,R06,Australia,Port Hedland,Gangavaram,Iron Ore,18.58,SYNTHETIC_DEMO
+2026-06-01,R06,Australia,Port Hedland,Gangavaram,Iron Ore,18.92,SYNTHETIC_DEMO
+2026-06-08,R06,Australia,Port Hedland,Gangavaram,Iron Ore,19.64,SYNTHETIC_DEMO
+2026-06-15,R06,Australia,Port Hedland,Gangavaram,Iron Ore,20.52,SYNTHETIC_DEMO
+2026-06-22,R06,Australia,Port Hedland,Gangavaram,Iron Ore,20.76,SYNTHETIC_DEMO
+2026-06-29,R06,Australia,Port Hedland,Gangavaram,Iron Ore,20.51,SYNTHETIC_DEMO
+2026-07-06,R06,Australia,Port Hedland,Gangavaram,Iron Ore,20.59,SYNTHETIC_DEMO
+2026-07-13,R06,Australia,Port Hedland,Gangavaram,Iron Ore,20.19,SYNTHETIC_DEMO
+2026-07-20,R06,Australia,Port Hedland,Gangavaram,Iron Ore,20.23,SYNTHETIC_DEMO
+2026-07-27,R06,Australia,Port Hedland,Gangavaram,Iron Ore,19.56,SYNTHETIC_DEMO
+2026-08-03,R06,Australia,Port Hedland,Gangavaram,Iron Ore,18.20,SYNTHETIC_DEMO
+2026-08-10,R06,Australia,Port Hedland,Gangavaram,Iron Ore,18.42,SYNTHETIC_DEMO
+2026-08-17,R06,Australia,Port Hedland,Gangavaram,Iron Ore,17.95,SYNTHETIC_DEMO
+2026-08-24,R06,Australia,Port Hedland,Gangavaram,Iron Ore,18.48,SYNTHETIC_DEMO
+2026-04-13,R07,Australia,Port Hedland,Paradip,Iron Ore,19.98,SYNTHETIC_DEMO
+2026-04-20,R07,Australia,Port Hedland,Paradip,Iron Ore,18.44,SYNTHETIC_DEMO
+2026-04-27,R07,Australia,Port Hedland,Paradip,Iron Ore,19.26,SYNTHETIC_DEMO
+2026-05-04,R07,Australia,Port Hedland,Paradip,Iron Ore,19.52,SYNTHETIC_DEMO
+2026-05-11,R07,Australia,Port Hedland,Paradip,Iron Ore,19.69,SYNTHETIC_DEMO
+2026-05-18,R07,Australia,Port Hedland,Paradip,Iron Ore,19.78,SYNTHETIC_DEMO
+2026-05-25,R07,Australia,Port Hedland,Paradip,Iron Ore,19.54,SYNTHETIC_DEMO
+2026-06-01,R07,Australia,Port Hedland,Paradip,Iron Ore,20.21,SYNTHETIC_DEMO
+2026-06-08,R07,Australia,Port Hedland,Paradip,Iron Ore,21.80,SYNTHETIC_DEMO
+2026-06-15,R07,Australia,Port Hedland,Paradip,Iron Ore,21.29,SYNTHETIC_DEMO
+2026-06-22,R07,Australia,Port Hedland,Paradip,Iron Ore,22.08,SYNTHETIC_DEMO
+2026-06-29,R07,Australia,Port Hedland,Paradip,Iron Ore,22.05,SYNTHETIC_DEMO
+2026-07-06,R07,Australia,Port Hedland,Paradip,Iron Ore,21.53,SYNTHETIC_DEMO
+2026-07-13,R07,Australia,Port Hedland,Paradip,Iron Ore,20.61,SYNTHETIC_DEMO
+2026-07-20,R07,Australia,Port Hedland,Paradip,Iron Ore,20.87,SYNTHETIC_DEMO
+2026-07-27,R07,Australia,Port Hedland,Paradip,Iron Ore,20.14,SYNTHETIC_DEMO
+2026-08-03,R07,Australia,Port Hedland,Paradip,Iron Ore,20.25,SYNTHETIC_DEMO
+2026-08-10,R07,Australia,Port Hedland,Paradip,Iron Ore,20.25,SYNTHETIC_DEMO
+2026-08-17,R07,Australia,Port Hedland,Paradip,Iron Ore,20.27,SYNTHETIC_DEMO
+2026-08-24,R07,Australia,Port Hedland,Paradip,Iron Ore,20.65,SYNTHETIC_DEMO
+2026-04-13,R08,Australia,Port Hedland,Dhamra,Iron Ore,19.91,SYNTHETIC_DEMO
+2026-04-20,R08,Australia,Port Hedland,Dhamra,Iron Ore,19.86,SYNTHETIC_DEMO
+2026-04-27,R08,Australia,Port Hedland,Dhamra,Iron Ore,21.98,SYNTHETIC_DEMO
+2026-05-04,R08,Australia,Port Hedland,Dhamra,Iron Ore,21.43,SYNTHETIC_DEMO
+2026-05-11,R08,Australia,Port Hedland,Dhamra,Iron Ore,22.19,SYNTHETIC_DEMO
+2026-05-18,R08,Australia,Port Hedland,Dhamra,Iron Ore,21.71,SYNTHETIC_DEMO
+2026-05-25,R08,Australia,Port Hedland,Dhamra,Iron Ore,21.21,SYNTHETIC_DEMO
+2026-06-01,R08,Australia,Port Hedland,Dhamra,Iron Ore,20.73,SYNTHETIC_DEMO
+2026-06-08,R08,Australia,Port Hedland,Dhamra,Iron Ore,20.32,SYNTHETIC_DEMO
+2026-06-15,R08,Australia,Port Hedland,Dhamra,Iron Ore,20.11,SYNTHETIC_DEMO
+2026-06-22,R08,Australia,Port Hedland,Dhamra,Iron Ore,19.39,SYNTHETIC_DEMO
+2026-06-29,R08,Australia,Port Hedland,Dhamra,Iron Ore,19.47,SYNTHETIC_DEMO
+2026-07-06,R08,Australia,Port Hedland,Dhamra,Iron Ore,20.50,SYNTHETIC_DEMO
+2026-07-13,R08,Australia,Port Hedland,Dhamra,Iron Ore,21.07,SYNTHETIC_DEMO
+2026-07-20,R08,Australia,Port Hedland,Dhamra,Iron Ore,21.02,SYNTHETIC_DEMO
+2026-07-27,R08,Australia,Port Hedland,Dhamra,Iron Ore,21.91,SYNTHETIC_DEMO
+2026-08-03,R08,Australia,Port Hedland,Dhamra,Iron Ore,21.65,SYNTHETIC_DEMO
+2026-08-10,R08,Australia,Port Hedland,Dhamra,Iron Ore,22.00,SYNTHETIC_DEMO
+2026-08-17,R08,Australia,Port Hedland,Dhamra,Iron Ore,22.27,SYNTHETIC_DEMO
+2026-08-24,R08,Australia,Port Hedland,Dhamra,Iron Ore,22.12,SYNTHETIC_DEMO
+2026-04-13,R09,Australia,Newcastle,Gopalpur,Limestone,14.95,SYNTHETIC_DEMO
+2026-04-20,R09,Australia,Newcastle,Gopalpur,Limestone,14.50,SYNTHETIC_DEMO
+2026-04-27,R09,Australia,Newcastle,Gopalpur,Limestone,14.99,SYNTHETIC_DEMO
+2026-05-04,R09,Australia,Newcastle,Gopalpur,Limestone,15.14,SYNTHETIC_DEMO
+2026-05-11,R09,Australia,Newcastle,Gopalpur,Limestone,15.09,SYNTHETIC_DEMO
+2026-05-18,R09,Australia,Newcastle,Gopalpur,Limestone,14.87,SYNTHETIC_DEMO
+2026-05-25,R09,Australia,Newcastle,Gopalpur,Limestone,15.26,SYNTHETIC_DEMO
+2026-06-01,R09,Australia,Newcastle,Gopalpur,Limestone,15.69,SYNTHETIC_DEMO
+2026-06-08,R09,Australia,Newcastle,Gopalpur,Limestone,16.12,SYNTHETIC_DEMO
+2026-06-15,R09,Australia,Newcastle,Gopalpur,Limestone,16.62,SYNTHETIC_DEMO
+2026-06-22,R09,Australia,Newcastle,Gopalpur,Limestone,15.86,SYNTHETIC_DEMO
+2026-06-29,R09,Australia,Newcastle,Gopalpur,Limestone,16.00,SYNTHETIC_DEMO
+2026-07-06,R09,Australia,Newcastle,Gopalpur,Limestone,15.72,SYNTHETIC_DEMO
+2026-07-13,R09,Australia,Newcastle,Gopalpur,Limestone,15.54,SYNTHETIC_DEMO
+2026-07-20,R09,Australia,Newcastle,Gopalpur,Limestone,14.79,SYNTHETIC_DEMO
+2026-07-27,R09,Australia,Newcastle,Gopalpur,Limestone,14.56,SYNTHETIC_DEMO
+2026-08-03,R09,Australia,Newcastle,Gopalpur,Limestone,14.88,SYNTHETIC_DEMO
+2026-08-10,R09,Australia,Newcastle,Gopalpur,Limestone,14.03,SYNTHETIC_DEMO
+2026-08-17,R09,Australia,Newcastle,Gopalpur,Limestone,15.04,SYNTHETIC_DEMO
+2026-08-24,R09,Australia,Newcastle,Gopalpur,Limestone,15.27,SYNTHETIC_DEMO
+2026-04-13,R10,Australia,Newcastle,Visakhapatnam,Limestone,14.75,SYNTHETIC_DEMO
+2026-04-20,R10,Australia,Newcastle,Visakhapatnam,Limestone,15.52,SYNTHETIC_DEMO
+2026-04-27,R10,Australia,Newcastle,Visakhapatnam,Limestone,15.79,SYNTHETIC_DEMO
+2026-05-04,R10,Australia,Newcastle,Visakhapatnam,Limestone,15.51,SYNTHETIC_DEMO
+2026-05-11,R10,Australia,Newcastle,Visakhapatnam,Limestone,16.24,SYNTHETIC_DEMO
+2026-05-18,R10,Australia,Newcastle,Visakhapatnam,Limestone,16.02,SYNTHETIC_DEMO
+2026-05-25,R10,Australia,Newcastle,Visakhapatnam,Limestone,14.75,SYNTHETIC_DEMO
+2026-06-01,R10,Australia,Newcastle,Visakhapatnam,Limestone,14.82,SYNTHETIC_DEMO
+2026-06-08,R10,Australia,Newcastle,Visakhapatnam,Limestone,14.37,SYNTHETIC_DEMO
+2026-06-15,R10,Australia,Newcastle,Visakhapatnam,Limestone,14.57,SYNTHETIC_DEMO
+2026-06-22,R10,Australia,Newcastle,Visakhapatnam,Limestone,14.07,SYNTHETIC_DEMO
+2026-06-29,R10,Australia,Newcastle,Visakhapatnam,Limestone,15.03,SYNTHETIC_DEMO
+2026-07-06,R10,Australia,Newcastle,Visakhapatnam,Limestone,14.72,SYNTHETIC_DEMO
+2026-07-13,R10,Australia,Newcastle,Visakhapatnam,Limestone,14.95,SYNTHETIC_DEMO
+2026-07-20,R10,Australia,Newcastle,Visakhapatnam,Limestone,15.72,SYNTHETIC_DEMO
+2026-07-27,R10,Australia,Newcastle,Visakhapatnam,Limestone,16.18,SYNTHETIC_DEMO
+2026-08-03,R10,Australia,Newcastle,Visakhapatnam,Limestone,17.30,SYNTHETIC_DEMO
+2026-08-10,R10,Australia,Newcastle,Visakhapatnam,Limestone,16.07,SYNTHETIC_DEMO
+2026-08-17,R10,Australia,Newcastle,Visakhapatnam,Limestone,15.66,SYNTHETIC_DEMO
+2026-08-24,R10,Australia,Newcastle,Visakhapatnam,Limestone,15.88,SYNTHETIC_DEMO
+2026-04-13,R11,United States,Norfolk,Paradip,Coking Coal,35.50,SYNTHETIC_DEMO
+2026-04-20,R11,United States,Norfolk,Paradip,Coking Coal,36.28,SYNTHETIC_DEMO
+2026-04-27,R11,United States,Norfolk,Paradip,Coking Coal,36.76,SYNTHETIC_DEMO
+2026-05-04,R11,United States,Norfolk,Paradip,Coking Coal,38.49,SYNTHETIC_DEMO
+2026-05-11,R11,United States,Norfolk,Paradip,Coking Coal,38.44,SYNTHETIC_DEMO
+2026-05-18,R11,United States,Norfolk,Paradip,Coking Coal,39.05,SYNTHETIC_DEMO
+2026-05-25,R11,United States,Norfolk,Paradip,Coking Coal,41.17,SYNTHETIC_DEMO
+2026-06-01,R11,United States,Norfolk,Paradip,Coking Coal,40.86,SYNTHETIC_DEMO
+2026-06-08,R11,United States,Norfolk,Paradip,Coking Coal,40.71,SYNTHETIC_DEMO
+2026-06-15,R11,United States,Norfolk,Paradip,Coking Coal,40.44,SYNTHETIC_DEMO
+2026-06-22,R11,United States,Norfolk,Paradip,Coking Coal,38.81,SYNTHETIC_DEMO
+2026-06-29,R11,United States,Norfolk,Paradip,Coking Coal,39.15,SYNTHETIC_DEMO
+2026-07-06,R11,United States,Norfolk,Paradip,Coking Coal,38.31,SYNTHETIC_DEMO
+2026-07-13,R11,United States,Norfolk,Paradip,Coking Coal,37.06,SYNTHETIC_DEMO
+2026-07-20,R11,United States,Norfolk,Paradip,Coking Coal,36.85,SYNTHETIC_DEMO
+2026-07-27,R11,United States,Norfolk,Paradip,Coking Coal,37.16,SYNTHETIC_DEMO
+2026-08-03,R11,United States,Norfolk,Paradip,Coking Coal,38.87,SYNTHETIC_DEMO
+2026-08-10,R11,United States,Norfolk,Paradip,Coking Coal,40.03,SYNTHETIC_DEMO
+2026-08-17,R11,United States,Norfolk,Paradip,Coking Coal,41.53,SYNTHETIC_DEMO
+2026-08-24,R11,United States,Norfolk,Paradip,Coking Coal,42.86,SYNTHETIC_DEMO
+2026-04-13,R12,United States,Norfolk,Visakhapatnam,Coking Coal,36.58,SYNTHETIC_DEMO
+2026-04-20,R12,United States,Norfolk,Visakhapatnam,Coking Coal,36.08,SYNTHETIC_DEMO
+2026-04-27,R12,United States,Norfolk,Visakhapatnam,Coking Coal,35.63,SYNTHETIC_DEMO
+2026-05-04,R12,United States,Norfolk,Visakhapatnam,Coking Coal,34.92,SYNTHETIC_DEMO
+2026-05-11,R12,United States,Norfolk,Visakhapatnam,Coking Coal,35.39,SYNTHETIC_DEMO
+2026-05-18,R12,United States,Norfolk,Visakhapatnam,Coking Coal,36.51,SYNTHETIC_DEMO
+2026-05-25,R12,United States,Norfolk,Visakhapatnam,Coking Coal,37.52,SYNTHETIC_DEMO
+2026-06-01,R12,United States,Norfolk,Visakhapatnam,Coking Coal,37.41,SYNTHETIC_DEMO
+2026-06-08,R12,United States,Norfolk,Visakhapatnam,Coking Coal,37.69,SYNTHETIC_DEMO
+2026-06-15,R12,United States,Norfolk,Visakhapatnam,Coking Coal,37.86,SYNTHETIC_DEMO
+2026-06-22,R12,United States,Norfolk,Visakhapatnam,Coking Coal,39.41,SYNTHETIC_DEMO
+2026-06-29,R12,United States,Norfolk,Visakhapatnam,Coking Coal,40.20,SYNTHETIC_DEMO
+2026-07-06,R12,United States,Norfolk,Visakhapatnam,Coking Coal,38.39,SYNTHETIC_DEMO
+2026-07-13,R12,United States,Norfolk,Visakhapatnam,Coking Coal,37.90,SYNTHETIC_DEMO
+2026-07-20,R12,United States,Norfolk,Visakhapatnam,Coking Coal,37.24,SYNTHETIC_DEMO
+2026-07-27,R12,United States,Norfolk,Visakhapatnam,Coking Coal,36.79,SYNTHETIC_DEMO
+2026-08-03,R12,United States,Norfolk,Visakhapatnam,Coking Coal,36.73,SYNTHETIC_DEMO
+2026-08-10,R12,United States,Norfolk,Visakhapatnam,Coking Coal,35.67,SYNTHETIC_DEMO
+2026-08-17,R12,United States,Norfolk,Visakhapatnam,Coking Coal,36.18,SYNTHETIC_DEMO
+2026-08-24,R12,United States,Norfolk,Visakhapatnam,Coking Coal,37.38,SYNTHETIC_DEMO
+2026-04-13,R13,United States,Baltimore,Haldia,Iron Ore,36.68,SYNTHETIC_DEMO
+2026-04-20,R13,United States,Baltimore,Haldia,Iron Ore,37.59,SYNTHETIC_DEMO
+2026-04-27,R13,United States,Baltimore,Haldia,Iron Ore,38.27,SYNTHETIC_DEMO
+2026-05-04,R13,United States,Baltimore,Haldia,Iron Ore,37.32,SYNTHETIC_DEMO
+2026-05-11,R13,United States,Baltimore,Haldia,Iron Ore,37.62,SYNTHETIC_DEMO
+2026-05-18,R13,United States,Baltimore,Haldia,Iron Ore,36.81,SYNTHETIC_DEMO
+2026-05-25,R13,United States,Baltimore,Haldia,Iron Ore,35.70,SYNTHETIC_DEMO
+2026-06-01,R13,United States,Baltimore,Haldia,Iron Ore,36.07,SYNTHETIC_DEMO
+2026-06-08,R13,United States,Baltimore,Haldia,Iron Ore,35.56,SYNTHETIC_DEMO
+2026-06-15,R13,United States,Baltimore,Haldia,Iron Ore,34.77,SYNTHETIC_DEMO
+2026-06-22,R13,United States,Baltimore,Haldia,Iron Ore,35.44,SYNTHETIC_DEMO
+2026-06-29,R13,United States,Baltimore,Haldia,Iron Ore,35.66,SYNTHETIC_DEMO
+2026-07-06,R13,United States,Baltimore,Haldia,Iron Ore,37.44,SYNTHETIC_DEMO
+2026-07-13,R13,United States,Baltimore,Haldia,Iron Ore,38.93,SYNTHETIC_DEMO
+2026-07-20,R13,United States,Baltimore,Haldia,Iron Ore,37.86,SYNTHETIC_DEMO
+2026-07-27,R13,United States,Baltimore,Haldia,Iron Ore,38.80,SYNTHETIC_DEMO
+2026-08-03,R13,United States,Baltimore,Haldia,Iron Ore,39.79,SYNTHETIC_DEMO
+2026-08-10,R13,United States,Baltimore,Haldia,Iron Ore,39.44,SYNTHETIC_DEMO
+2026-08-17,R13,United States,Baltimore,Haldia,Iron Ore,38.92,SYNTHETIC_DEMO
+2026-08-24,R13,United States,Baltimore,Haldia,Iron Ore,39.17,SYNTHETIC_DEMO
+2026-04-13,R14,United States,Baltimore,Visakhapatnam,Iron Ore,38.27,SYNTHETIC_DEMO
+2026-04-20,R14,United States,Baltimore,Visakhapatnam,Iron Ore,37.76,SYNTHETIC_DEMO
+2026-04-27,R14,United States,Baltimore,Visakhapatnam,Iron Ore,40.16,SYNTHETIC_DEMO
+2026-05-04,R14,United States,Baltimore,Visakhapatnam,Iron Ore,36.54,SYNTHETIC_DEMO
+2026-05-11,R14,United States,Baltimore,Visakhapatnam,Iron Ore,35.90,SYNTHETIC_DEMO
+2026-05-18,R14,United States,Baltimore,Visakhapatnam,Iron Ore,34.93,SYNTHETIC_DEMO
+2026-05-25,R14,United States,Baltimore,Visakhapatnam,Iron Ore,33.53,SYNTHETIC_DEMO
+2026-06-01,R14,United States,Baltimore,Visakhapatnam,Iron Ore,34.69,SYNTHETIC_DEMO
+2026-06-08,R14,United States,Baltimore,Visakhapatnam,Iron Ore,33.75,SYNTHETIC_DEMO
+2026-06-15,R14,United States,Baltimore,Visakhapatnam,Iron Ore,34.75,SYNTHETIC_DEMO
+2026-06-22,R14,United States,Baltimore,Visakhapatnam,Iron Ore,33.77,SYNTHETIC_DEMO
+2026-06-29,R14,United States,Baltimore,Visakhapatnam,Iron Ore,34.57,SYNTHETIC_DEMO
+2026-07-06,R14,United States,Baltimore,Visakhapatnam,Iron Ore,34.82,SYNTHETIC_DEMO
+2026-07-13,R14,United States,Baltimore,Visakhapatnam,Iron Ore,35.98,SYNTHETIC_DEMO
+2026-07-20,R14,United States,Baltimore,Visakhapatnam,Iron Ore,37.00,SYNTHETIC_DEMO
+2026-07-27,R14,United States,Baltimore,Visakhapatnam,Iron Ore,36.60,SYNTHETIC_DEMO
+2026-08-03,R14,United States,Baltimore,Visakhapatnam,Iron Ore,36.95,SYNTHETIC_DEMO
+2026-08-10,R14,United States,Baltimore,Visakhapatnam,Iron Ore,37.42,SYNTHETIC_DEMO
+2026-08-17,R14,United States,Baltimore,Visakhapatnam,Iron Ore,34.51,SYNTHETIC_DEMO
+2026-08-24,R14,United States,Baltimore,Visakhapatnam,Iron Ore,36.22,SYNTHETIC_DEMO
+2026-04-13,R15,Mozambique,Nacala,Visakhapatnam,Coking Coal,17.97,SYNTHETIC_DEMO
+2026-04-20,R15,Mozambique,Nacala,Visakhapatnam,Coking Coal,18.62,SYNTHETIC_DEMO
+2026-04-27,R15,Mozambique,Nacala,Visakhapatnam,Coking Coal,18.81,SYNTHETIC_DEMO
+2026-05-04,R15,Mozambique,Nacala,Visakhapatnam,Coking Coal,19.25,SYNTHETIC_DEMO
+2026-05-11,R15,Mozambique,Nacala,Visakhapatnam,Coking Coal,19.55,SYNTHETIC_DEMO
+2026-05-18,R15,Mozambique,Nacala,Visakhapatnam,Coking Coal,19.35,SYNTHETIC_DEMO
+2026-05-25,R15,Mozambique,Nacala,Visakhapatnam,Coking Coal,18.92,SYNTHETIC_DEMO
+2026-06-01,R15,Mozambique,Nacala,Visakhapatnam,Coking Coal,18.65,SYNTHETIC_DEMO
+2026-06-08,R15,Mozambique,Nacala,Visakhapatnam,Coking Coal,18.26,SYNTHETIC_DEMO
+2026-06-15,R15,Mozambique,Nacala,Visakhapatnam,Coking Coal,18.44,SYNTHETIC_DEMO
+2026-06-22,R15,Mozambique,Nacala,Visakhapatnam,Coking Coal,18.41,SYNTHETIC_DEMO
+2026-06-29,R15,Mozambique,Nacala,Visakhapatnam,Coking Coal,17.41,SYNTHETIC_DEMO
+2026-07-06,R15,Mozambique,Nacala,Visakhapatnam,Coking Coal,18.19,SYNTHETIC_DEMO
+2026-07-13,R15,Mozambique,Nacala,Visakhapatnam,Coking Coal,18.31,SYNTHETIC_DEMO
+2026-07-20,R15,Mozambique,Nacala,Visakhapatnam,Coking Coal,18.50,SYNTHETIC_DEMO
+2026-07-27,R15,Mozambique,Nacala,Visakhapatnam,Coking Coal,18.62,SYNTHETIC_DEMO
+2026-08-03,R15,Mozambique,Nacala,Visakhapatnam,Coking Coal,19.23,SYNTHETIC_DEMO
+2026-08-10,R15,Mozambique,Nacala,Visakhapatnam,Coking Coal,20.07,SYNTHETIC_DEMO
+2026-08-17,R15,Mozambique,Nacala,Visakhapatnam,Coking Coal,19.01,SYNTHETIC_DEMO
+2026-08-24,R15,Mozambique,Nacala,Visakhapatnam,Coking Coal,19.78,SYNTHETIC_DEMO
+2026-04-13,R16,Mozambique,Nacala,Paradip,Coking Coal,18.24,SYNTHETIC_DEMO
+2026-04-20,R16,Mozambique,Nacala,Paradip,Coking Coal,18.15,SYNTHETIC_DEMO
+2026-04-27,R16,Mozambique,Nacala,Paradip,Coking Coal,18.74,SYNTHETIC_DEMO
+2026-05-04,R16,Mozambique,Nacala,Paradip,Coking Coal,18.28,SYNTHETIC_DEMO
+2026-05-11,R16,Mozambique,Nacala,Paradip,Coking Coal,18.25,SYNTHETIC_DEMO
+2026-05-18,R16,Mozambique,Nacala,Paradip,Coking Coal,18.98,SYNTHETIC_DEMO
+2026-05-25,R16,Mozambique,Nacala,Paradip,Coking Coal,20.44,SYNTHETIC_DEMO
+2026-06-01,R16,Mozambique,Nacala,Paradip,Coking Coal,19.73,SYNTHETIC_DEMO
+2026-06-08,R16,Mozambique,Nacala,Paradip,Coking Coal,20.39,SYNTHETIC_DEMO
+2026-06-15,R16,Mozambique,Nacala,Paradip,Coking Coal,19.87,SYNTHETIC_DEMO
+2026-06-22,R16,Mozambique,Nacala,Paradip,Coking Coal,20.83,SYNTHETIC_DEMO
+2026-06-29,R16,Mozambique,Nacala,Paradip,Coking Coal,20.13,SYNTHETIC_DEMO
+2026-07-06,R16,Mozambique,Nacala,Paradip,Coking Coal,19.87,SYNTHETIC_DEMO
+2026-07-13,R16,Mozambique,Nacala,Paradip,Coking Coal,19.76,SYNTHETIC_DEMO
+2026-07-20,R16,Mozambique,Nacala,Paradip,Coking Coal,18.75,SYNTHETIC_DEMO
+2026-07-27,R16,Mozambique,Nacala,Paradip,Coking Coal,19.14,SYNTHETIC_DEMO
+2026-08-03,R16,Mozambique,Nacala,Paradip,Coking Coal,18.97,SYNTHETIC_DEMO
+2026-08-10,R16,Mozambique,Nacala,Paradip,Coking Coal,19.58,SYNTHETIC_DEMO
+2026-08-17,R16,Mozambique,Nacala,Paradip,Coking Coal,19.28,SYNTHETIC_DEMO
+2026-08-24,R16,Mozambique,Nacala,Paradip,Coking Coal,19.33,SYNTHETIC_DEMO
+2026-04-13,R17,Mozambique,Nacala,Gangavaram,Coking Coal,18.38,SYNTHETIC_DEMO
+2026-04-20,R17,Mozambique,Nacala,Gangavaram,Coking Coal,19.43,SYNTHETIC_DEMO
+2026-04-27,R17,Mozambique,Nacala,Gangavaram,Coking Coal,18.81,SYNTHETIC_DEMO
+2026-05-04,R17,Mozambique,Nacala,Gangavaram,Coking Coal,18.75,SYNTHETIC_DEMO
+2026-05-11,R17,Mozambique,Nacala,Gangavaram,Coking Coal,19.15,SYNTHETIC_DEMO
+2026-05-18,R17,Mozambique,Nacala,Gangavaram,Coking Coal,19.54,SYNTHETIC_DEMO
+2026-05-25,R17,Mozambique,Nacala,Gangavaram,Coking Coal,18.90,SYNTHETIC_DEMO
+2026-06-01,R17,Mozambique,Nacala,Gangavaram,Coking Coal,18.10,SYNTHETIC_DEMO
+2026-06-08,R17,Mozambique,Nacala,Gangavaram,Coking Coal,18.53,SYNTHETIC_DEMO
+2026-06-15,R17,Mozambique,Nacala,Gangavaram,Coking Coal,18.32,SYNTHETIC_DEMO
+2026-06-22,R17,Mozambique,Nacala,Gangavaram,Coking Coal,18.51,SYNTHETIC_DEMO
+2026-06-29,R17,Mozambique,Nacala,Gangavaram,Coking Coal,18.47,SYNTHETIC_DEMO
+2026-07-06,R17,Mozambique,Nacala,Gangavaram,Coking Coal,18.96,SYNTHETIC_DEMO
+2026-07-13,R17,Mozambique,Nacala,Gangavaram,Coking Coal,19.14,SYNTHETIC_DEMO
+2026-07-20,R17,Mozambique,Nacala,Gangavaram,Coking Coal,20.22,SYNTHETIC_DEMO
+2026-07-27,R17,Mozambique,Nacala,Gangavaram,Coking Coal,20.72,SYNTHETIC_DEMO
+2026-08-03,R17,Mozambique,Nacala,Gangavaram,Coking Coal,20.21,SYNTHETIC_DEMO
+2026-08-10,R17,Mozambique,Nacala,Gangavaram,Coking Coal,19.33,SYNTHETIC_DEMO
+2026-08-17,R17,Mozambique,Nacala,Gangavaram,Coking Coal,19.57,SYNTHETIC_DEMO
+2026-08-24,R17,Mozambique,Nacala,Gangavaram,Coking Coal,19.91,SYNTHETIC_DEMO
+2026-04-13,R18,Mozambique,Maputo,Visakhapatnam,Coking Coal,17.92,SYNTHETIC_DEMO
+2026-04-20,R18,Mozambique,Maputo,Visakhapatnam,Coking Coal,18.57,SYNTHETIC_DEMO
+2026-04-27,R18,Mozambique,Maputo,Visakhapatnam,Coking Coal,18.63,SYNTHETIC_DEMO
+2026-05-04,R18,Mozambique,Maputo,Visakhapatnam,Coking Coal,18.81,SYNTHETIC_DEMO
+2026-05-11,R18,Mozambique,Maputo,Visakhapatnam,Coking Coal,20.58,SYNTHETIC_DEMO
+2026-05-18,R18,Mozambique,Maputo,Visakhapatnam,Coking Coal,20.39,SYNTHETIC_DEMO
+2026-05-25,R18,Mozambique,Maputo,Visakhapatnam,Coking Coal,19.89,SYNTHETIC_DEMO
+2026-06-01,R18,Mozambique,Maputo,Visakhapatnam,Coking Coal,20.49,SYNTHETIC_DEMO
+2026-06-08,R18,Mozambique,Maputo,Visakhapatnam,Coking Coal,20.63,SYNTHETIC_DEMO
+2026-06-15,R18,Mozambique,Maputo,Visakhapatnam,Coking Coal,19.66,SYNTHETIC_DEMO
+2026-06-22,R18,Mozambique,Maputo,Visakhapatnam,Coking Coal,18.83,SYNTHETIC_DEMO
+2026-06-29,R18,Mozambique,Maputo,Visakhapatnam,Coking Coal,18.56,SYNTHETIC_DEMO
+2026-07-06,R18,Mozambique,Maputo,Visakhapatnam,Coking Coal,19.59,SYNTHETIC_DEMO
+2026-07-13,R18,Mozambique,Maputo,Visakhapatnam,Coking Coal,17.43,SYNTHETIC_DEMO
+2026-07-20,R18,Mozambique,Maputo,Visakhapatnam,Coking Coal,18.63,SYNTHETIC_DEMO
+2026-07-27,R18,Mozambique,Maputo,Visakhapatnam,Coking Coal,16.99,SYNTHETIC_DEMO
+2026-08-03,R18,Mozambique,Maputo,Visakhapatnam,Coking Coal,18.19,SYNTHETIC_DEMO
+2026-08-10,R18,Mozambique,Maputo,Visakhapatnam,Coking Coal,18.00,SYNTHETIC_DEMO
+2026-08-17,R18,Mozambique,Maputo,Visakhapatnam,Coking Coal,20.38,SYNTHETIC_DEMO
+2026-08-24,R18,Mozambique,Maputo,Visakhapatnam,Coking Coal,20.56,SYNTHETIC_DEMO
+2026-04-13,R19,Russia,Vostochny,Visakhapatnam,Coking Coal,20.53,SYNTHETIC_DEMO
+2026-04-20,R19,Russia,Vostochny,Visakhapatnam,Coking Coal,21.83,SYNTHETIC_DEMO
+2026-04-27,R19,Russia,Vostochny,Visakhapatnam,Coking Coal,21.71,SYNTHETIC_DEMO
+2026-05-04,R19,Russia,Vostochny,Visakhapatnam,Coking Coal,21.88,SYNTHETIC_DEMO
+2026-05-11,R19,Russia,Vostochny,Visakhapatnam,Coking Coal,23.37,SYNTHETIC_DEMO
+2026-05-18,R19,Russia,Vostochny,Visakhapatnam,Coking Coal,22.28,SYNTHETIC_DEMO
+2026-05-25,R19,Russia,Vostochny,Visakhapatnam,Coking Coal,21.65,SYNTHETIC_DEMO
+2026-06-01,R19,Russia,Vostochny,Visakhapatnam,Coking Coal,23.20,SYNTHETIC_DEMO
+2026-06-08,R19,Russia,Vostochny,Visakhapatnam,Coking Coal,22.64,SYNTHETIC_DEMO
+2026-06-15,R19,Russia,Vostochny,Visakhapatnam,Coking Coal,22.38,SYNTHETIC_DEMO
+2026-06-22,R19,Russia,Vostochny,Visakhapatnam,Coking Coal,22.32,SYNTHETIC_DEMO
+2026-06-29,R19,Russia,Vostochny,Visakhapatnam,Coking Coal,21.91,SYNTHETIC_DEMO
+2026-07-06,R19,Russia,Vostochny,Visakhapatnam,Coking Coal,20.71,SYNTHETIC_DEMO
+2026-07-13,R19,Russia,Vostochny,Visakhapatnam,Coking Coal,20.98,SYNTHETIC_DEMO
+2026-07-20,R19,Russia,Vostochny,Visakhapatnam,Coking Coal,21.38,SYNTHETIC_DEMO
+2026-07-27,R19,Russia,Vostochny,Visakhapatnam,Coking Coal,21.45,SYNTHETIC_DEMO
+2026-08-03,R19,Russia,Vostochny,Visakhapatnam,Coking Coal,22.17,SYNTHETIC_DEMO
+2026-08-10,R19,Russia,Vostochny,Visakhapatnam,Coking Coal,22.81,SYNTHETIC_DEMO
+2026-08-17,R19,Russia,Vostochny,Visakhapatnam,Coking Coal,23.74,SYNTHETIC_DEMO
+2026-08-24,R19,Russia,Vostochny,Visakhapatnam,Coking Coal,23.31,SYNTHETIC_DEMO
+2026-04-13,R20,Russia,Vostochny,Paradip,Coking Coal,21.85,SYNTHETIC_DEMO
+2026-04-20,R20,Russia,Vostochny,Paradip,Coking Coal,22.31,SYNTHETIC_DEMO
+2026-04-27,R20,Russia,Vostochny,Paradip,Coking Coal,22.45,SYNTHETIC_DEMO
+2026-05-04,R20,Russia,Vostochny,Paradip,Coking Coal,22.33,SYNTHETIC_DEMO
+2026-05-11,R20,Russia,Vostochny,Paradip,Coking Coal,22.04,SYNTHETIC_DEMO
+2026-05-18,R20,Russia,Vostochny,Paradip,Coking Coal,22.16,SYNTHETIC_DEMO
+2026-05-25,R20,Russia,Vostochny,Paradip,Coking Coal,21.38,SYNTHETIC_DEMO
+2026-06-01,R20,Russia,Vostochny,Paradip,Coking Coal,20.99,SYNTHETIC_DEMO
+2026-06-08,R20,Russia,Vostochny,Paradip,Coking Coal,21.35,SYNTHETIC_DEMO
+2026-06-15,R20,Russia,Vostochny,Paradip,Coking Coal,21.53,SYNTHETIC_DEMO
+2026-06-22,R20,Russia,Vostochny,Paradip,Coking Coal,21.33,SYNTHETIC_DEMO
+2026-06-29,R20,Russia,Vostochny,Paradip,Coking Coal,21.75,SYNTHETIC_DEMO
+2026-07-06,R20,Russia,Vostochny,Paradip,Coking Coal,21.39,SYNTHETIC_DEMO
+2026-07-13,R20,Russia,Vostochny,Paradip,Coking Coal,21.47,SYNTHETIC_DEMO
+2026-07-20,R20,Russia,Vostochny,Paradip,Coking Coal,22.82,SYNTHETIC_DEMO
+2026-07-27,R20,Russia,Vostochny,Paradip,Coking Coal,23.06,SYNTHETIC_DEMO
+2026-08-03,R20,Russia,Vostochny,Paradip,Coking Coal,23.49,SYNTHETIC_DEMO
+2026-08-10,R20,Russia,Vostochny,Paradip,Coking Coal,22.10,SYNTHETIC_DEMO
+2026-08-17,R20,Russia,Vostochny,Paradip,Coking Coal,23.77,SYNTHETIC_DEMO
+2026-08-24,R20,Russia,Vostochny,Paradip,Coking Coal,22.74,SYNTHETIC_DEMO
+2026-04-13,R21,Russia,Vanino,Gangavaram,Iron Ore,21.66,SYNTHETIC_DEMO
+2026-04-20,R21,Russia,Vanino,Gangavaram,Iron Ore,21.04,SYNTHETIC_DEMO
+2026-04-27,R21,Russia,Vanino,Gangavaram,Iron Ore,21.41,SYNTHETIC_DEMO
+2026-05-04,R21,Russia,Vanino,Gangavaram,Iron Ore,21.09,SYNTHETIC_DEMO
+2026-05-11,R21,Russia,Vanino,Gangavaram,Iron Ore,20.29,SYNTHETIC_DEMO
+2026-05-18,R21,Russia,Vanino,Gangavaram,Iron Ore,21.20,SYNTHETIC_DEMO
+2026-05-25,R21,Russia,Vanino,Gangavaram,Iron Ore,21.86,SYNTHETIC_DEMO
+2026-06-01,R21,Russia,Vanino,Gangavaram,Iron Ore,21.81,SYNTHETIC_DEMO
+2026-06-08,R21,Russia,Vanino,Gangavaram,Iron Ore,22.68,SYNTHETIC_DEMO
+2026-06-15,R21,Russia,Vanino,Gangavaram,Iron Ore,22.85,SYNTHETIC_DEMO
+2026-06-22,R21,Russia,Vanino,Gangavaram,Iron Ore,22.85,SYNTHETIC_DEMO
+2026-06-29,R21,Russia,Vanino,Gangavaram,Iron Ore,22.76,SYNTHETIC_DEMO
+2026-07-06,R21,Russia,Vanino,Gangavaram,Iron Ore,22.09,SYNTHETIC_DEMO
+2026-07-13,R21,Russia,Vanino,Gangavaram,Iron Ore,21.87,SYNTHETIC_DEMO
+2026-07-20,R21,Russia,Vanino,Gangavaram,Iron Ore,21.85,SYNTHETIC_DEMO
+2026-07-27,R21,Russia,Vanino,Gangavaram,Iron Ore,21.57,SYNTHETIC_DEMO
+2026-08-03,R21,Russia,Vanino,Gangavaram,Iron Ore,21.39,SYNTHETIC_DEMO
+2026-08-10,R21,Russia,Vanino,Gangavaram,Iron Ore,21.36,SYNTHETIC_DEMO
+2026-08-17,R21,Russia,Vanino,Gangavaram,Iron Ore,20.66,SYNTHETIC_DEMO
+2026-08-24,R21,Russia,Vanino,Gangavaram,Iron Ore,22.23,SYNTHETIC_DEMO
+2026-04-13,R22,Russia,Vanino,Dhamra,Iron Ore,22.83,SYNTHETIC_DEMO
+2026-04-20,R22,Russia,Vanino,Dhamra,Iron Ore,23.49,SYNTHETIC_DEMO
+2026-04-27,R22,Russia,Vanino,Dhamra,Iron Ore,21.45,SYNTHETIC_DEMO
+2026-05-04,R22,Russia,Vanino,Dhamra,Iron Ore,22.49,SYNTHETIC_DEMO
+2026-05-11,R22,Russia,Vanino,Dhamra,Iron Ore,20.97,SYNTHETIC_DEMO
+2026-05-18,R22,Russia,Vanino,Dhamra,Iron Ore,21.46,SYNTHETIC_DEMO
+2026-05-25,R22,Russia,Vanino,Dhamra,Iron Ore,20.74,SYNTHETIC_DEMO
+2026-06-01,R22,Russia,Vanino,Dhamra,Iron Ore,21.09,SYNTHETIC_DEMO
+2026-06-08,R22,Russia,Vanino,Dhamra,Iron Ore,21.57,SYNTHETIC_DEMO
+2026-06-15,R22,Russia,Vanino,Dhamra,Iron Ore,21.64,SYNTHETIC_DEMO
+2026-06-22,R22,Russia,Vanino,Dhamra,Iron Ore,22.26,SYNTHETIC_DEMO
+2026-06-29,R22,Russia,Vanino,Dhamra,Iron Ore,22.72,SYNTHETIC_DEMO
+2026-07-06,R22,Russia,Vanino,Dhamra,Iron Ore,22.93,SYNTHETIC_DEMO
+2026-07-13,R22,Russia,Vanino,Dhamra,Iron Ore,23.47,SYNTHETIC_DEMO
+2026-07-20,R22,Russia,Vanino,Dhamra,Iron Ore,23.98,SYNTHETIC_DEMO
+2026-07-27,R22,Russia,Vanino,Dhamra,Iron Ore,22.80,SYNTHETIC_DEMO
+2026-08-03,R22,Russia,Vanino,Dhamra,Iron Ore,22.97,SYNTHETIC_DEMO
+2026-08-10,R22,Russia,Vanino,Dhamra,Iron Ore,22.36,SYNTHETIC_DEMO
+2026-08-17,R22,Russia,Vanino,Dhamra,Iron Ore,21.16,SYNTHETIC_DEMO
+2026-08-24,R22,Russia,Vanino,Dhamra,Iron Ore,21.93,SYNTHETIC_DEMO
+2026-04-13,R23,Indonesia,Samarinda,Paradip,Coking Coal,14.04,SYNTHETIC_DEMO
+2026-04-20,R23,Indonesia,Samarinda,Paradip,Coking Coal,14.43,SYNTHETIC_DEMO
+2026-04-27,R23,Indonesia,Samarinda,Paradip,Coking Coal,13.74,SYNTHETIC_DEMO
+2026-05-04,R23,Indonesia,Samarinda,Paradip,Coking Coal,14.88,SYNTHETIC_DEMO
+2026-05-11,R23,Indonesia,Samarinda,Paradip,Coking Coal,14.52,SYNTHETIC_DEMO
+2026-05-18,R23,Indonesia,Samarinda,Paradip,Coking Coal,14.42,SYNTHETIC_DEMO
+2026-05-25,R23,Indonesia,Samarinda,Paradip,Coking Coal,14.66,SYNTHETIC_DEMO
+2026-06-01,R23,Indonesia,Samarinda,Paradip,Coking Coal,14.28,SYNTHETIC_DEMO
+2026-06-08,R23,Indonesia,Samarinda,Paradip,Coking Coal,13.60,SYNTHETIC_DEMO
+2026-06-15,R23,Indonesia,Samarinda,Paradip,Coking Coal,14.20,SYNTHETIC_DEMO
+2026-06-22,R23,Indonesia,Samarinda,Paradip,Coking Coal,13.70,SYNTHETIC_DEMO
+2026-06-29,R23,Indonesia,Samarinda,Paradip,Coking Coal,13.74,SYNTHETIC_DEMO
+2026-07-06,R23,Indonesia,Samarinda,Paradip,Coking Coal,14.01,SYNTHETIC_DEMO
+2026-07-13,R23,Indonesia,Samarinda,Paradip,Coking Coal,13.83,SYNTHETIC_DEMO
+2026-07-20,R23,Indonesia,Samarinda,Paradip,Coking Coal,13.91,SYNTHETIC_DEMO
+2026-07-27,R23,Indonesia,Samarinda,Paradip,Coking Coal,14.06,SYNTHETIC_DEMO
+2026-08-03,R23,Indonesia,Samarinda,Paradip,Coking Coal,14.63,SYNTHETIC_DEMO
+2026-08-10,R23,Indonesia,Samarinda,Paradip,Coking Coal,14.47,SYNTHETIC_DEMO
+2026-08-17,R23,Indonesia,Samarinda,Paradip,Coking Coal,14.64,SYNTHETIC_DEMO
+2026-08-24,R23,Indonesia,Samarinda,Paradip,Coking Coal,14.30,SYNTHETIC_DEMO
+2026-04-13,R24,Indonesia,Balikpapan,Visakhapatnam,Coking Coal,13.47,SYNTHETIC_DEMO
+2026-04-20,R24,Indonesia,Balikpapan,Visakhapatnam,Coking Coal,13.38,SYNTHETIC_DEMO
+2026-04-27,R24,Indonesia,Balikpapan,Visakhapatnam,Coking Coal,13.68,SYNTHETIC_DEMO
+2026-05-04,R24,Indonesia,Balikpapan,Visakhapatnam,Coking Coal,13.14,SYNTHETIC_DEMO
+2026-05-11,R24,Indonesia,Balikpapan,Visakhapatnam,Coking Coal,13.23,SYNTHETIC_DEMO
+2026-05-18,R24,Indonesia,Balikpapan,Visakhapatnam,Coking Coal,13.35,SYNTHETIC_DEMO
+2026-05-25,R24,Indonesia,Balikpapan,Visakhapatnam,Coking Coal,14.26,SYNTHETIC_DEMO
+2026-06-01,R24,Indonesia,Balikpapan,Visakhapatnam,Coking Coal,14.72,SYNTHETIC_DEMO
+2026-06-08,R24,Indonesia,Balikpapan,Visakhapatnam,Coking Coal,13.31,SYNTHETIC_DEMO
+2026-06-15,R24,Indonesia,Balikpapan,Visakhapatnam,Coking Coal,14.12,SYNTHETIC_DEMO
+2026-06-22,R24,Indonesia,Balikpapan,Visakhapatnam,Coking Coal,14.32,SYNTHETIC_DEMO
+2026-06-29,R24,Indonesia,Balikpapan,Visakhapatnam,Coking Coal,13.53,SYNTHETIC_DEMO
+2026-07-06,R24,Indonesia,Balikpapan,Visakhapatnam,Coking Coal,13.86,SYNTHETIC_DEMO
+2026-07-13,R24,Indonesia,Balikpapan,Visakhapatnam,Coking Coal,13.81,SYNTHETIC_DEMO
+2026-07-20,R24,Indonesia,Balikpapan,Visakhapatnam,Coking Coal,13.38,SYNTHETIC_DEMO
+2026-07-27,R24,Indonesia,Balikpapan,Visakhapatnam,Coking Coal,12.43,SYNTHETIC_DEMO
+2026-08-03,R24,Indonesia,Balikpapan,Visakhapatnam,Coking Coal,12.76,SYNTHETIC_DEMO
+2026-08-10,R24,Indonesia,Balikpapan,Visakhapatnam,Coking Coal,13.13,SYNTHETIC_DEMO
+2026-08-17,R24,Indonesia,Balikpapan,Visakhapatnam,Coking Coal,13.08,SYNTHETIC_DEMO
+2026-08-24,R24,Indonesia,Balikpapan,Visakhapatnam,Coking Coal,13.41,SYNTHETIC_DEMO
+2026-04-13,R25,Indonesia,Samarinda,Haldia,Coking Coal,15.81,SYNTHETIC_DEMO
+2026-04-20,R25,Indonesia,Samarinda,Haldia,Coking Coal,15.87,SYNTHETIC_DEMO
+2026-04-27,R25,Indonesia,Samarinda,Haldia,Coking Coal,14.72,SYNTHETIC_DEMO
+2026-05-04,R25,Indonesia,Samarinda,Haldia,Coking Coal,14.55,SYNTHETIC_DEMO
+2026-05-11,R25,Indonesia,Samarinda,Haldia,Coking Coal,14.60,SYNTHETIC_DEMO
+2026-05-18,R25,Indonesia,Samarinda,Haldia,Coking Coal,13.77,SYNTHETIC_DEMO
+2026-05-25,R25,Indonesia,Samarinda,Haldia,Coking Coal,14.33,SYNTHETIC_DEMO
+2026-06-01,R25,Indonesia,Samarinda,Haldia,Coking Coal,13.95,SYNTHETIC_DEMO
+2026-06-08,R25,Indonesia,Samarinda,Haldia,Coking Coal,14.12,SYNTHETIC_DEMO
+2026-06-15,R25,Indonesia,Samarinda,Haldia,Coking Coal,14.43,SYNTHETIC_DEMO
+2026-06-22,R25,Indonesia,Samarinda,Haldia,Coking Coal,14.85,SYNTHETIC_DEMO
+2026-06-29,R25,Indonesia,Samarinda,Haldia,Coking Coal,14.81,SYNTHETIC_DEMO
+2026-07-06,R25,Indonesia,Samarinda,Haldia,Coking Coal,15.00,SYNTHETIC_DEMO
+2026-07-13,R25,Indonesia,Samarinda,Haldia,Coking Coal,15.68,SYNTHETIC_DEMO
+2026-07-20,R25,Indonesia,Samarinda,Haldia,Coking Coal,15.09,SYNTHETIC_DEMO
+2026-07-27,R25,Indonesia,Samarinda,Haldia,Coking Coal,15.39,SYNTHETIC_DEMO
+2026-08-03,R25,Indonesia,Samarinda,Haldia,Coking Coal,15.03,SYNTHETIC_DEMO
+2026-08-10,R25,Indonesia,Samarinda,Haldia,Coking Coal,14.45,SYNTHETIC_DEMO
+2026-08-17,R25,Indonesia,Samarinda,Haldia,Coking Coal,14.47,SYNTHETIC_DEMO
+2026-08-24,R25,Indonesia,Samarinda,Haldia,Coking Coal,14.01,SYNTHETIC_DEMO
+2026-04-13,R26,Indonesia,Samarinda,Sagar-Sandheads,Coking Coal,14.79,SYNTHETIC_DEMO
+2026-04-20,R26,Indonesia,Samarinda,Sagar-Sandheads,Coking Coal,15.21,SYNTHETIC_DEMO
+2026-04-27,R26,Indonesia,Samarinda,Sagar-Sandheads,Coking Coal,15.18,SYNTHETIC_DEMO
+2026-05-04,R26,Indonesia,Samarinda,Sagar-Sandheads,Coking Coal,15.29,SYNTHETIC_DEMO
+2026-05-11,R26,Indonesia,Samarinda,Sagar-Sandheads,Coking Coal,15.33,SYNTHETIC_DEMO
+2026-05-18,R26,Indonesia,Samarinda,Sagar-Sandheads,Coking Coal,15.21,SYNTHETIC_DEMO
+2026-05-25,R26,Indonesia,Samarinda,Sagar-Sandheads,Coking Coal,14.67,SYNTHETIC_DEMO
+2026-06-01,R26,Indonesia,Samarinda,Sagar-Sandheads,Coking Coal,14.83,SYNTHETIC_DEMO
+2026-06-08,R26,Indonesia,Samarinda,Sagar-Sandheads,Coking Coal,14.37,SYNTHETIC_DEMO
+2026-06-15,R26,Indonesia,Samarinda,Sagar-Sandheads,Coking Coal,14.58,SYNTHETIC_DEMO
+2026-06-22,R26,Indonesia,Samarinda,Sagar-Sandheads,Coking Coal,14.88,SYNTHETIC_DEMO
+2026-06-29,R26,Indonesia,Samarinda,Sagar-Sandheads,Coking Coal,14.95,SYNTHETIC_DEMO
+2026-07-06,R26,Indonesia,Samarinda,Sagar-Sandheads,Coking Coal,15.29,SYNTHETIC_DEMO
+2026-07-13,R26,Indonesia,Samarinda,Sagar-Sandheads,Coking Coal,15.68,SYNTHETIC_DEMO
+2026-07-20,R26,Indonesia,Samarinda,Sagar-Sandheads,Coking Coal,16.23,SYNTHETIC_DEMO
+2026-07-27,R26,Indonesia,Samarinda,Sagar-Sandheads,Coking Coal,16.35,SYNTHETIC_DEMO
+2026-08-03,R26,Indonesia,Samarinda,Sagar-Sandheads,Coking Coal,16.35,SYNTHETIC_DEMO
+2026-08-10,R26,Indonesia,Samarinda,Sagar-Sandheads,Coking Coal,15.98,SYNTHETIC_DEMO
+2026-08-17,R26,Indonesia,Samarinda,Sagar-Sandheads,Coking Coal,16.53,SYNTHETIC_DEMO
+2026-08-24,R26,Indonesia,Samarinda,Sagar-Sandheads,Coking Coal,16.10,SYNTHETIC_DEMO
+2026-04-13,R27,Indonesia,Balikpapan,Dhamra,Limestone,13.81,SYNTHETIC_DEMO
+2026-04-20,R27,Indonesia,Balikpapan,Dhamra,Limestone,13.90,SYNTHETIC_DEMO
+2026-04-27,R27,Indonesia,Balikpapan,Dhamra,Limestone,13.78,SYNTHETIC_DEMO
+2026-05-04,R27,Indonesia,Balikpapan,Dhamra,Limestone,13.44,SYNTHETIC_DEMO
+2026-05-11,R27,Indonesia,Balikpapan,Dhamra,Limestone,13.39,SYNTHETIC_DEMO
+2026-05-18,R27,Indonesia,Balikpapan,Dhamra,Limestone,12.96,SYNTHETIC_DEMO
+2026-05-25,R27,Indonesia,Balikpapan,Dhamra,Limestone,13.03,SYNTHETIC_DEMO
+2026-06-01,R27,Indonesia,Balikpapan,Dhamra,Limestone,12.87,SYNTHETIC_DEMO
+2026-06-08,R27,Indonesia,Balikpapan,Dhamra,Limestone,13.48,SYNTHETIC_DEMO
+2026-06-15,R27,Indonesia,Balikpapan,Dhamra,Limestone,13.59,SYNTHETIC_DEMO
+2026-06-22,R27,Indonesia,Balikpapan,Dhamra,Limestone,13.57,SYNTHETIC_DEMO
+2026-06-29,R27,Indonesia,Balikpapan,Dhamra,Limestone,14.00,SYNTHETIC_DEMO
+2026-07-06,R27,Indonesia,Balikpapan,Dhamra,Limestone,13.75,SYNTHETIC_DEMO
+2026-07-13,R27,Indonesia,Balikpapan,Dhamra,Limestone,14.17,SYNTHETIC_DEMO
+2026-07-20,R27,Indonesia,Balikpapan,Dhamra,Limestone,14.20,SYNTHETIC_DEMO
+2026-07-27,R27,Indonesia,Balikpapan,Dhamra,Limestone,13.98,SYNTHETIC_DEMO
+2026-08-03,R27,Indonesia,Balikpapan,Dhamra,Limestone,13.39,SYNTHETIC_DEMO
+2026-08-10,R27,Indonesia,Balikpapan,Dhamra,Limestone,13.41,SYNTHETIC_DEMO
+2026-08-17,R27,Indonesia,Balikpapan,Dhamra,Limestone,12.99,SYNTHETIC_DEMO
+2026-08-24,R27,Indonesia,Balikpapan,Dhamra,Limestone,13.00,SYNTHETIC_DEMO
+2026-04-13,R28,Indonesia,Samarinda,Gopalpur,Limestone,13.82,SYNTHETIC_DEMO
+2026-04-20,R28,Indonesia,Samarinda,Gopalpur,Limestone,13.42,SYNTHETIC_DEMO
+2026-04-27,R28,Indonesia,Samarinda,Gopalpur,Limestone,13.54,SYNTHETIC_DEMO
+2026-05-04,R28,Indonesia,Samarinda,Gopalpur,Limestone,13.61,SYNTHETIC_DEMO
+2026-05-11,R28,Indonesia,Samarinda,Gopalpur,Limestone,13.26,SYNTHETIC_DEMO
+2026-05-18,R28,Indonesia,Samarinda,Gopalpur,Limestone,13.75,SYNTHETIC_DEMO
+2026-05-25,R28,Indonesia,Samarinda,Gopalpur,Limestone,13.68,SYNTHETIC_DEMO
+2026-06-01,R28,Indonesia,Samarinda,Gopalpur,Limestone,14.73,SYNTHETIC_DEMO
+2026-06-08,R28,Indonesia,Samarinda,Gopalpur,Limestone,14.22,SYNTHETIC_DEMO
+2026-06-15,R28,Indonesia,Samarinda,Gopalpur,Limestone,14.39,SYNTHETIC_DEMO
+2026-06-22,R28,Indonesia,Samarinda,Gopalpur,Limestone,14.64,SYNTHETIC_DEMO
+2026-06-29,R28,Indonesia,Samarinda,Gopalpur,Limestone,14.36,SYNTHETIC_DEMO
+2026-07-06,R28,Indonesia,Samarinda,Gopalpur,Limestone,13.89,SYNTHETIC_DEMO
+2026-07-13,R28,Indonesia,Samarinda,Gopalpur,Limestone,14.11,SYNTHETIC_DEMO
+2026-07-20,R28,Indonesia,Samarinda,Gopalpur,Limestone,14.09,SYNTHETIC_DEMO
+2026-07-27,R28,Indonesia,Samarinda,Gopalpur,Limestone,14.01,SYNTHETIC_DEMO
+2026-08-03,R28,Indonesia,Samarinda,Gopalpur,Limestone,13.73,SYNTHETIC_DEMO
+2026-08-10,R28,Indonesia,Samarinda,Gopalpur,Limestone,13.95,SYNTHETIC_DEMO
+2026-08-17,R28,Indonesia,Samarinda,Gopalpur,Limestone,13.81,SYNTHETIC_DEMO
+2026-08-24,R28,Indonesia,Samarinda,Gopalpur,Limestone,13.54,SYNTHETIC_DEMO
+2026-04-13,R29,Indonesia,Balikpapan,Paradip,Limestone,14.06,SYNTHETIC_DEMO
+2026-04-20,R29,Indonesia,Balikpapan,Paradip,Limestone,14.24,SYNTHETIC_DEMO
+2026-04-27,R29,Indonesia,Balikpapan,Paradip,Limestone,14.01,SYNTHETIC_DEMO
+2026-05-04,R29,Indonesia,Balikpapan,Paradip,Limestone,12.90,SYNTHETIC_DEMO
+2026-05-11,R29,Indonesia,Balikpapan,Paradip,Limestone,12.97,SYNTHETIC_DEMO
+2026-05-18,R29,Indonesia,Balikpapan,Paradip,Limestone,13.58,SYNTHETIC_DEMO
+2026-05-25,R29,Indonesia,Balikpapan,Paradip,Limestone,12.98,SYNTHETIC_DEMO
+2026-06-01,R29,Indonesia,Balikpapan,Paradip,Limestone,13.05,SYNTHETIC_DEMO
+2026-06-08,R29,Indonesia,Balikpapan,Paradip,Limestone,13.70,SYNTHETIC_DEMO
+2026-06-15,R29,Indonesia,Balikpapan,Paradip,Limestone,13.89,SYNTHETIC_DEMO
+2026-06-22,R29,Indonesia,Balikpapan,Paradip,Limestone,13.74,SYNTHETIC_DEMO
+2026-06-29,R29,Indonesia,Balikpapan,Paradip,Limestone,14.49,SYNTHETIC_DEMO
+2026-07-06,R29,Indonesia,Balikpapan,Paradip,Limestone,14.85,SYNTHETIC_DEMO
+2026-07-13,R29,Indonesia,Balikpapan,Paradip,Limestone,15.15,SYNTHETIC_DEMO
+2026-07-20,R29,Indonesia,Balikpapan,Paradip,Limestone,14.62,SYNTHETIC_DEMO
+2026-07-27,R29,Indonesia,Balikpapan,Paradip,Limestone,15.09,SYNTHETIC_DEMO
+2026-08-03,R29,Indonesia,Balikpapan,Paradip,Limestone,15.18,SYNTHETIC_DEMO
+2026-08-10,R29,Indonesia,Balikpapan,Paradip,Limestone,14.06,SYNTHETIC_DEMO
+2026-08-17,R29,Indonesia,Balikpapan,Paradip,Limestone,14.10,SYNTHETIC_DEMO
+2026-08-24,R29,Indonesia,Balikpapan,Paradip,Limestone,14.11,SYNTHETIC_DEMO

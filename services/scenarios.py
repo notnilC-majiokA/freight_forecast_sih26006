@@ -1,135 +1,144 @@
-"""Scenario builder (SIH26006).
+"""Scenario builder / orchestrator (SIH26006).
 
-Ties the (placeholder) forecasting and optimiser services together into the
-single :class:`ForecastResponse` that the API returns and the results page
-renders. This is the one place that knows how a procurement "scenario" is
-assembled, and it enforces that the requested trade lane is feasible
-(defined by ``data/routes.csv``).
+The one place that assembles a procurement "scenario" end to end. It resolves
+the trade lane (enforcing that origin x cargo x destination is feasible per
+``data/routes.csv``) and then runs every module in order:
+
+    forecast (A) -> vessels (B) -> entry windows (A) -> port feasibility (C/D)
+    -> contract strategies (E) -> idle (F) -> risk (G) -> recommendation
+
+and returns the single :class:`ForecastResponse` the API and results page use.
 """
 from __future__ import annotations
 
 from datetime import datetime, timezone
 
 from schemas.forecast_schema import ForecastRequest, ForecastResponse, RouteInfo
+from services import contracts as contracts_mod
+from services import idle as idle_mod
+from services import port_feasibility
+from services import risk as risk_mod
 from services.data_service import data_service
-from services.forecasting import generate_forecast, horizon_weeks_for
-from services.optimizer import recommend_strategy
-from utils.helpers import DEMO_DISCLAIMER
+from services.forecasting import generate_forecast
+from services.optimizer import (
+    chosen_vessel,
+    evaluate_entry_windows,
+    evaluate_vessels,
+)
+from services.recommendation import build_recommendation
+from utils.helpers import DATA_TRANSPARENCY_NOTE, DEMO_DISCLAIMER
 
 
 class InfeasibleRouteError(ValueError):
-    """Raised when the requested origin x cargo x destination is not an allowed lane."""
-
-
-# Fallbacks only used if routes.csv is missing/incomplete (keeps the demo alive).
-_DEMO_FALLBACK = {
-    "distance_nm": {
-        "Indonesia": 3200,
-        "Australia": 5100,
-        "South Africa": 4300,
-        "Brazil": 8600,
-    },
-    "load_port": {
-        "Indonesia": "Samarinda",
-        "Australia": "Hay Point",
-        "South Africa": "Richards Bay",
-        "Brazil": "Tubarao",
-    },
-    "vessel": {"Coking Coal": "Panamax", "Iron Ore": "Capesize", "Limestone": "Supramax"},
-    "capacity": {"Panamax": 75000, "Capesize": 170000, "Supramax": 55000, "Handysize": 32000},
-}
-_DEMO_DESIGN_SPEED_KN = 12.5
-
-
-def _route_info_from_lane(request: ForecastRequest, lane: dict) -> RouteInfo:
-    return RouteInfo(
-        route_id=str(lane.get("route_id", "DEMO")),
-        origin_region=str(lane["origin_region"]),
-        load_port=str(lane["load_port"]),
-        destination_port=str(lane["destination_port"]),
-        cargo_type=str(lane["cargo_type"]),
-        vessel_type=str(lane["vessel_type"]),
-        vessel_capacity_tonnes=int(lane["vessel_capacity_tonnes"]),
-        approx_distance_nm=int(lane["approx_distance_nm"]),
-        estimated_transit_days=float(lane["est_transit_days"]),
-        feasible_combination=True,
-    )
-
-
-def _route_info_fallback(request: ForecastRequest) -> RouteInfo:
-    region = request.origin_region.value
-    cargo = request.cargo_type.value
-    vessel = _DEMO_FALLBACK["vessel"].get(cargo, "Panamax")
-    distance = _DEMO_FALLBACK["distance_nm"].get(region, 5000)
-    return RouteInfo(
-        route_id="DEMO-FALLBACK",
-        origin_region=region,
-        load_port=_DEMO_FALLBACK["load_port"].get(region, "TBD"),
-        destination_port=request.destination_port.value,
-        cargo_type=cargo,
-        vessel_type=vessel,
-        vessel_capacity_tonnes=int(_DEMO_FALLBACK["capacity"].get(vessel, 75000)),
-        approx_distance_nm=distance,
-        estimated_transit_days=round(distance / (_DEMO_DESIGN_SPEED_KN * 24), 1),
-        feasible_combination=True,
-    )
+    """Raised when origin x cargo x destination is not an allowed lane."""
 
 
 def _resolve_route(request: ForecastRequest) -> RouteInfo:
     lane = data_service.find_route(
-        request.origin_region.value,
+        request.origin_country.value,
         request.cargo_type.value,
         request.destination_port.value,
     )
-    if lane is not None:
-        return _route_info_from_lane(request, lane)
+    if lane is None:
+        _raise_lane_hint(request)
 
-    # No matching lane. If routes.csv is present, this combination is simply
-    # not allowed - tell the user which lanes DO exist for their choice.
-    if not data_service.routes.empty:
-        alt = data_service.routes_for_origin_cargo(
-            request.origin_region.value, request.cargo_type.value
-        )
-        if alt:
-            dests = sorted({str(a["destination_port"]) for a in alt})
-            hint = (
-                f"{request.origin_region.value} can supply {request.cargo_type.value} "
-                f"to: {', '.join(dests)}."
-            )
-        else:
-            same_cargo = data_service.routes[
-                data_service.routes["cargo_type"].str.lower()
-                == request.cargo_type.value.lower()
-            ]
-            origins = sorted({str(o) for o in same_cargo["origin_region"].tolist()})
-            hint = (
-                f"No demo lane carries {request.cargo_type.value} from "
-                f"{request.origin_region.value}. Demo origins for "
-                f"{request.cargo_type.value}: {', '.join(origins) or 'none'}."
-            )
-        raise InfeasibleRouteError(
-            f"'{request.origin_region.value} -> {request.destination_port.value}' is not "
-            f"a feasible lane for {request.cargo_type.value} in the demo route dataset. "
-            + hint
-        )
+    return RouteInfo(
+        route_id=str(lane.get("route_id", "DEMO")),
+        origin_country=str(lane["origin_country"]),
+        load_port=str(lane["load_port"]),
+        destination_port=str(lane["destination_port"]),
+        cargo_type=str(lane["cargo_type"]),
+        approx_distance_nm=int(lane["approx_distance_nm"]),
+        estimated_transit_days=float(lane["est_transit_days"]),
+        reference_rate_usd_per_tonne=float(lane["reference_rate_usd_per_tonne"]),
+        feasible_combination=True,
+        data_class=str(lane.get("data_class", "SYNTHETIC_DEMO")),
+    )
 
-    # routes.csv missing entirely - keep the demo usable.
-    return _route_info_fallback(request)
+
+def _raise_lane_hint(request: ForecastRequest) -> None:
+    cargo = request.cargo_type.value
+    origin = request.origin_country.value
+    dest = request.destination_port.value
+
+    alt = data_service.routes_for_origin_cargo(origin, cargo)
+    if alt:
+        dests = sorted({str(a["destination_port"]) for a in alt})
+        hint = f"{origin} can supply {cargo} to: {', '.join(dests)}."
+    else:
+        origins = data_service.origins_for_cargo(cargo)
+        hint = (
+            f"No demo lane carries {cargo} from {origin}. Demo origins for "
+            f"{cargo}: {', '.join(origins) or 'none'}."
+        )
+    raise InfeasibleRouteError(
+        f"'{origin} -> {dest}' is not a feasible lane for {cargo} in the demo "
+        f"route dataset. " + hint
+    )
 
 
 def build_forecast_response(request: ForecastRequest) -> ForecastResponse:
     """Assemble a full DEMO scenario response for one procurement request."""
-    route_info = _resolve_route(request)
-    forecast = generate_forecast(request)
-    recommendation, cost_comparison = recommend_strategy(request, forecast, route_info)
+    route = _resolve_route(request)
+
+    # A - forecast
+    forecast = generate_forecast(request, route)
+
+    # B - vessel optimisation (+ pick the best feasible / closest)
+    vessel_options = evaluate_vessels(request, route, forecast)
+    vessel = chosen_vessel(vessel_options)
+
+    # C / D - port + vessel feasibility for the chosen class
+    origin_row = data_service.port(route.load_port) or {"port_name": route.load_port}
+    if request.origin_port:
+        pref = data_service.port(request.origin_port)
+        if pref and str(pref.get("country", "")).lower() == route.origin_country.lower() \
+                and pref.get("role") == "load":
+            origin_row = pref
+    dest_row = data_service.port(route.destination_port) or {"port_name": route.destination_port}
+    vrow = data_service.vessel(vessel.vessel_type) or {}
+    feasibility = port_feasibility.assess(
+        vrow, origin_row, dest_row, route,
+        float(request.quantity_tonnes), int(request.delivery_window_days.value),
+    )
+
+    # A - entry windows
+    entry_windows, recommended_entry = evaluate_entry_windows(
+        request, route, forecast, vessel
+    )
+
+    # E - contract strategy comparison
+    contract_rows = contracts_mod.compare_contracts(request, forecast, vessel)
+    contract = contracts_mod.recommended_contract(contract_rows)
+
+    # F - idle scenario
+    idle = idle_mod.analyse_idle(request, route, vessel, contract)
+
+    # G - risk
+    risk = risk_mod.assess_risk(
+        request, route, forecast, vessel, feasibility, recommended_entry, contract, idle
+    )
+
+    # Engine - final recommendation
+    recommendation = build_recommendation(
+        request, route, forecast, vessel, feasibility, recommended_entry,
+        contract, idle, risk,
+    )
 
     return ForecastResponse(
         disclaimer=DEMO_DISCLAIMER,
+        data_transparency_note=DATA_TRANSPARENCY_NOTE,
+        demo_mode=True,
         generated_at=datetime.now(timezone.utc),
         request=request,
-        horizon_weeks=horizon_weeks_for(int(request.delivery_window_days.value)),
+        route_info=route,
         forecast=forecast,
+        entry_windows=entry_windows,
+        recommended_entry=recommended_entry,
+        vessel_options=vessel_options,
+        port_feasibility=feasibility,
+        contract_strategies=contract_rows,
+        idle_analysis=idle,
+        risk_analysis=risk,
         recommendation=recommendation,
-        cost_comparison=cost_comparison,
-        route_info=route_info,
     )

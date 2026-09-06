@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Intelligent Freight Forecasting &amp; Vessel Chartering DSS | SIH26006</title>
+  <title>Freight Forecasting &amp; Vessel Chartering DSS | SIH26006</title>
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
     rel="stylesheet"
@@ -11,7 +11,6 @@
   <link href="/static/css/style.css" rel="stylesheet" />
 </head>
 <body>
-  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg app-navbar">
     <div class="container">
       <a class="navbar-brand fw-semibold" href="/">SIH26006 &middot; Chartering DSS</a>
@@ -31,61 +30,53 @@
     </div>
   </nav>
 
-  <!-- Header -->
   <header class="app-header">
     <div class="container">
       <h1 class="h3 mb-1">Intelligent Freight Forecasting &amp; Vessel Chartering Decision Support System</h1>
       <div class="subtitle">SIH26006 | Ministry of Steel | Smart India Hackathon 2026</div>
-      <p class="mb-0 mt-2" style="max-width: 60rem;">
-        AI-assisted decision support for overseas bulk raw-material procurement
-        and vessel chartering to India's East Coast.
+      <p class="mb-0 mt-2" style="max-width: 62rem;">
+        India-centric decision support for overseas industrial bulk raw-material
+        procurement and vessel chartering to the East Coast of India &mdash;
+        <em>what</em> to charter, <em>where</em> from/to, <em>when</em> to enter
+        the market, <em>how</em> to contract it, and <em>why</em>.
       </p>
     </div>
   </header>
 
   <div class="container my-4">
-    <!-- Demo data banner -->
-    <div class="demo-banner rounded p-3 mb-4">
-      <strong>DEMO DATA &mdash; NOT REAL MARKET DATA.</strong> This prototype
-      returns clearly-labelled synthetic values so the decision workflow can be
-      reviewed. The freight-forecasting and optimisation models are not
-      implemented yet, and no real Indian freight-rate data is used.
+    <div class="demo-banner rounded p-3 mb-4" id="dataNotice">
+      <strong>Prototype uses synthetic/demo market and infrastructure data.</strong>
+      Production deployment would integrate validated historical, port and
+      licensed market data. Forecasts demonstrate the architecture, not real
+      market accuracy; risk and feasibility scores are model-based heuristic
+      indicators.
     </div>
 
     <div class="row g-4">
-      <!-- Explanation -->
       <div class="col-lg-5">
         <div class="card h-100">
-          <div class="card-header">About this system</div>
+          <div class="card-header">From reactive spot buying to an actionable plan</div>
           <div class="card-body">
-            <p class="mb-2">
-              A decision-support tool for <strong>Indian steel plants and
-              PSUs</strong> importing bulk raw materials &mdash; coking coal,
-              iron ore, limestone &mdash; from overseas to ports on the
-              <strong>East Coast of India</strong>.
-            </p>
-            <p class="mb-1">For a given procurement scenario it searches:</p>
-            <p class="mb-2 ps-2 border-start border-3">
-              Overseas Origin &times; Cargo Type &times; East Coast Indian Port
-              &times; Vessel Type &times; Chartering Week
-              <br />
-              <span class="text-primary fw-semibold">&rarr; lowest expected-cost feasible strategy</span>
-            </p>
-            <p class="mb-2">Intended users:</p>
-            <ul class="mb-2">
-              <li>Steel-plant procurement managers</li>
-              <li>Logistics planners</li>
-              <li>PSU procurement / logistics decision makers</li>
-            </ul>
-            <p class="mb-0 text-muted small">
-              Feasible origin&ndash;cargo&ndash;port combinations come from the
-              route dataset &mdash; not every origin supplies every cargo.
+            <p class="mb-2">This prototype walks one procurement scenario through:</p>
+            <ol class="decision-flow mb-3">
+              <li>Predictive freight forecasting <span class="text-muted">(Module A)</span></li>
+              <li>Optimal market-entry timing <span class="text-muted">(Module A)</span></li>
+              <li>Feasible vessel-type optimization <span class="text-muted">(Module B)</span></li>
+              <li>Origin + destination port feasibility <span class="text-muted">(Modules C/D)</span></li>
+              <li>Spot vs short/medium-term MVC comparison <span class="text-muted">(Module E)</span></li>
+              <li>Idle-time management <span class="text-muted">(Module F)</span></li>
+              <li>Risk mitigation <span class="text-muted">(Module G)</span></li>
+              <li>Actionable chartering recommendation</li>
+            </ol>
+            <p class="mb-1 small text-muted">
+              Prototype commodity scope is intentionally limited to coking coal,
+              iron ore and limestone. Feasible origin&ndash;cargo&ndash;port
+              combinations come from <code>data/routes.csv</code>.
             </p>
           </div>
         </div>
       </div>
 
-      <!-- Input form -->
       <div class="col-lg-7">
         <div class="card h-100">
           <div class="card-header">Procurement scenario</div>
@@ -93,105 +84,108 @@
             <form id="forecastForm" class="needs-validation" novalidate>
               <div class="row g-3">
                 <div class="col-md-6">
-                  <label for="cargoType" class="form-label">Cargo type (bulk raw material)</label>
+                  <label for="cargoType" class="form-label">Commodity</label>
                   <select id="cargoType" name="cargo_type" class="form-select" required>
                     <option value="" selected disabled>Choose&hellip;</option>
-                    <option value="Coking Coal">Coking Coal</option>
-                    <option value="Iron Ore">Iron Ore</option>
-                    <option value="Limestone">Limestone</option>
                   </select>
-                  <div class="invalid-feedback">Please select a cargo type.</div>
+                  <div class="invalid-feedback">Please select a commodity.</div>
                 </div>
 
                 <div class="col-md-6">
-                  <label for="quantity" class="form-label">Quantity to procure (tonnes)</label>
+                  <label for="quantity" class="form-label">Cargo quantity (tonnes)</label>
                   <input type="number" id="quantity" name="quantity_tonnes"
                          class="form-control" min="1" max="5000000" step="1"
-                         placeholder="e.g. 150000" required />
-                  <div class="invalid-feedback">
-                    Enter a quantity between 1 and 5,000,000 tonnes.
-                  </div>
+                         placeholder="e.g. 120000" required />
+                  <div class="invalid-feedback">Enter 1&ndash;5,000,000 tonnes.</div>
                 </div>
 
                 <div class="col-md-6">
-                  <label for="deliveryWindow" class="form-label">Delivery deadline</label>
-                  <select id="deliveryWindow" name="delivery_window_days"
-                          class="form-select" required>
+                  <label for="originCountry" class="form-label">Origin country</label>
+                  <select id="originCountry" name="origin_country" class="form-select" required>
                     <option value="" selected disabled>Choose&hellip;</option>
-                    <option value="30">Within 30 days</option>
-                    <option value="45">Within 45 days</option>
-                    <option value="60">Within 60 days</option>
                   </select>
-                  <div class="invalid-feedback">Please select a delivery deadline.</div>
+                  <div class="invalid-feedback">Please select an origin country.</div>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="originPort" class="form-label">
+                    Origin / loading port <span class="text-muted">(optional)</span>
+                  </label>
+                  <input list="originPortList" id="originPort" name="origin_port"
+                         class="form-control" placeholder="Auto (lane default)" />
+                  <datalist id="originPortList"></datalist>
                 </div>
 
                 <div class="col-md-6">
                   <label for="destinationPort" class="form-label">Destination port (East Coast India)</label>
-                  <select id="destinationPort" name="destination_port"
-                          class="form-select" required>
+                  <select id="destinationPort" name="destination_port" class="form-select" required>
                     <option value="" selected disabled>Choose&hellip;</option>
-                    <option value="Paradip">Paradip</option>
-                    <option value="Visakhapatnam">Visakhapatnam</option>
-                    <option value="Kolkata/Haldia">Kolkata/Haldia</option>
                   </select>
                   <div class="invalid-feedback">Please select a destination port.</div>
                 </div>
 
                 <div class="col-md-6">
-                  <label for="originRegion" class="form-label">Preferred overseas origin</label>
-                  <select id="originRegion" name="origin_region"
-                          class="form-select" required>
+                  <label for="deliveryWindow" class="form-label">Delivery window</label>
+                  <select id="deliveryWindow" name="delivery_window_days" class="form-select" required>
                     <option value="" selected disabled>Choose&hellip;</option>
-                    <option value="Australia">Australia</option>
-                    <option value="Brazil">Brazil</option>
-                    <option value="South Africa">South Africa</option>
-                    <option value="Indonesia">Indonesia</option>
                   </select>
-                  <div class="invalid-feedback">Please select an origin region.</div>
+                  <div class="invalid-feedback">Please select a delivery window.</div>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="vesselPreference" class="form-label">Vessel type</label>
+                  <select id="vesselPreference" name="vessel_preference" class="form-select" required>
+                  </select>
+                  <div class="form-text">Pick a class, or <strong>Optimize</strong> to evaluate all.</div>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="contractPreference" class="form-label">Contract preference</label>
+                  <select id="contractPreference" name="contract_preference" class="form-select" required>
+                  </select>
+                  <div class="form-text">Spot, short/medium-term MVC, or Compare All.</div>
                 </div>
               </div>
 
               <div id="formError" class="alert alert-danger mt-3 d-none" role="alert"></div>
 
-              <button type="submit" id="submitBtn" class="btn btn-primary mt-3">
-                <span class="spinner-border spinner-border-sm me-2 d-none" id="submitSpinner"
-                      role="status" aria-hidden="true"></span>
-                Generate Forecast &amp; Chartering Recommendation
-              </button>
+              <div class="d-flex flex-wrap gap-2 mt-3">
+                <button type="submit" id="submitBtn" class="btn btn-primary">
+                  <span class="spinner-border spinner-border-sm me-2 d-none" id="submitSpinner"
+                        role="status" aria-hidden="true"></span>
+                  Run decision analysis
+                </button>
+                <button type="button" id="demoBtn" class="btn btn-outline-secondary">
+                  Load demo scenario
+                </button>
+              </div>
             </form>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Feasible demo lanes -->
     <div class="card mt-4">
       <div class="card-header d-flex justify-content-between align-items-center">
         <span>Feasible trade lanes in the demo route dataset</span>
-        <span class="badge bg-warning text-dark">DEMO DATA</span>
+        <span class="badge bg-warning text-dark">SYNTHETIC / DEMO DATA</span>
       </div>
       <div class="card-body">
         <p class="text-muted small mb-2">
-          The optimiser only considers origin&ndash;cargo&ndash;port&ndash;vessel
-          combinations listed here. Replace <code>data/routes.csv</code> with a
-          validated lane dataset to extend coverage.
+          Only origin&ndash;cargo&ndash;destination combinations listed here are
+          accepted. The feasibility engine then evaluates every vessel class per
+          lane. Replace <code>data/routes.csv</code> to extend coverage.
         </p>
         <div class="table-responsive">
           <table class="table table-sm align-middle">
             <thead>
               <tr>
-                <th>Lane</th>
-                <th>Origin</th>
-                <th>Load port</th>
-                <th>East Coast port</th>
-                <th>Cargo</th>
-                <th>Vessel</th>
-                <th class="text-end">Capacity (t)</th>
-                <th class="text-end">Transit (d)</th>
+                <th>Lane</th><th>Origin</th><th>Load port</th><th>East Coast port</th>
+                <th>Cargo</th><th class="text-end">Distance (nm)</th><th class="text-end">Transit (d)</th>
               </tr>
             </thead>
             <tbody id="feasibleLanes">
-              <tr><td colspan="8" class="text-muted">Loading&hellip;</td></tr>
+              <tr><td colspan="7" class="text-muted">Loading&hellip;</td></tr>
             </tbody>
           </table>
         </div>
@@ -203,17 +197,16 @@
     <div class="container">
       SIH26006 &middot; Intelligent Freight Forecasting &amp; Vessel Chartering
       Decision Support System &middot; Ministry of Steel &middot; prototype
-      (DEMO data only).
+      (synthetic / demonstration data only).
     </div>
   </footer>
 
-  <!-- Loading overlay -->
   <div id="loadingOverlay" class="loading-overlay d-none">
     <div class="text-center">
       <div class="spinner-border text-primary" role="status" style="width:3rem;height:3rem;">
         <span class="visually-hidden">Loading&hellip;</span>
       </div>
-      <p class="mt-3 fw-semibold text-dark">Evaluating chartering strategies&hellip;</p>
+      <p class="mt-3 fw-semibold text-dark">Running forecast, feasibility, contract &amp; risk analysis&hellip;</p>
     </div>
   </div>
 

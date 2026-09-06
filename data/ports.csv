@@ -1,14 +1,30 @@
-# SIH26006 - DEMO DATA - NOT REAL MARKET DATA
-# East Coast of India discharge ports + overseas bulk load ports.
-# Coordinates are public geographic facts; draft figures are illustrative only.
-port_name,country,region,role,coast,latitude,longitude,max_draft_m,notes
-Paradip,India,East Coast India,discharge,East Coast India,20.2649,86.6753,18.0,DEMO illustrative draft; deep-draft capable
-Visakhapatnam,India,East Coast India,discharge,East Coast India,17.6868,83.2185,18.5,DEMO illustrative draft; deep-draft capable
-Kolkata/Haldia,India,East Coast India,discharge,East Coast India,22.0333,88.0833,8.5,DEMO draft-limited river port; Supramax max
-Hay Point,Australia,Australia,load,,-21.2833,149.2833,17.0,DEMO coking coal load port
-Port Hedland,Australia,Australia,load,,-20.3106,118.6069,19.0,DEMO iron ore load port
-Newcastle,Australia,Australia,load,,-32.9283,151.7817,15.2,DEMO coal / minor bulks load port
-Richards Bay,South Africa,South Africa,load,,-28.8000,32.0833,17.5,DEMO coal terminal
-Saldanha Bay,South Africa,South Africa,load,,-33.0117,17.9442,21.5,DEMO iron ore terminal
-Tubarao,Brazil,Brazil,load,,-20.2861,-40.2331,21.0,DEMO iron ore terminal
-Samarinda,Indonesia,Indonesia,load,,-0.5017,117.1536,14.0,DEMO Kalimantan coal load anchorage
+# SIH26006 - SYNTHETIC / DEMONSTRATION DATA - NOT VERIFIED PORT INFRASTRUCTURE
+# Origin (load) and East Coast India destination (discharge) ports.
+# max_loa_m / max_beam_m / max_draft_m / cargo_handling_rate_tpd are ILLUSTRATIVE
+# figures invented for the prototype port/vessel feasibility engine. congestion
+# and turnaround are demonstration assumptions. Production deployment must
+# replace this with validated port master data.
+# compatible_vessels / supported_commodities use ';' as the list separator.
+port_name,country,region,role,max_loa_m,max_beam_m,max_draft_m,cargo_handling_rate_tpd,supported_commodities,compatible_vessels,congestion_factor,typical_turnaround_days,berthing_notes,data_class
+Hay Point,Australia,Queensland,load,300,50,19.0,90000,Coking Coal,Handysize;Supramax;Panamax;Capesize,1.15,3.0,Deep-water coal loader; tidal sailing draft,SYNTHETIC_DEMO
+Dalrymple Bay,Australia,Queensland,load,300,50,18.5,85000,Coking Coal,Handysize;Supramax;Panamax;Capesize,1.20,3.2,Coal export terminal adjacent to Hay Point,SYNTHETIC_DEMO
+Port Hedland,Australia,Western Australia,load,330,55,19.4,120000,Iron Ore;Coking Coal,Handysize;Supramax;Panamax;Capesize,1.25,2.8,Tidal channel; one-way traffic windows,SYNTHETIC_DEMO
+Newcastle,Australia,New South Wales,load,300,50,15.2,70000,Coking Coal;Limestone,Handysize;Supramax;Panamax,1.10,3.0,Sailing draft limited vs Capesize full load,SYNTHETIC_DEMO
+Norfolk,United States,Virginia,load,300,45,15.5,60000,Coking Coal,Handysize;Supramax;Panamax,1.20,3.6,US East Coast coal pier; Capesize part-laden only,SYNTHETIC_DEMO
+Baltimore,United States,Maryland,load,290,45,15.0,55000,Coking Coal;Iron Ore,Handysize;Supramax;Panamax,1.25,3.8,Chesapeake channel draft limit,SYNTHETIC_DEMO
+New Orleans,United States,Louisiana,load,275,44,13.7,45000,Iron Ore;Limestone,Handysize;Supramax,1.30,4.2,Mississippi River draft and fog delays,SYNTHETIC_DEMO
+Nacala,Mozambique,Nampula,load,300,50,18.0,55000,Coking Coal,Handysize;Supramax;Panamax;Capesize,1.35,4.5,Deep natural harbour; rail-fed coal terminal,SYNTHETIC_DEMO
+Maputo,Mozambique,Maputo,load,240,40,12.8,35000,Coking Coal;Limestone,Handysize;Supramax,1.40,5.0,Dredged channel; Panamax part-laden only,SYNTHETIC_DEMO
+Beira,Mozambique,Sofala,load,220,36,11.5,30000,Coking Coal,Handysize;Supramax,1.55,5.6,Shallow silted channel; frequent dredging,SYNTHETIC_DEMO
+Vostochny,Russia,Primorsky Krai,load,300,50,16.5,70000,Coking Coal,Handysize;Supramax;Panamax,1.30,4.0,Far East coal terminal; winter weather delays,SYNTHETIC_DEMO
+Vanino,Russia,Khabarovsk Krai,load,290,46,15.8,55000,Coking Coal;Iron Ore,Handysize;Supramax;Panamax,1.35,4.4,Far East bulk terminal; ice season restrictions,SYNTHETIC_DEMO
+Murmansk,Russia,Murmansk Oblast,load,265,44,15.5,50000,Iron Ore;Coking Coal,Handysize;Supramax;Panamax,1.30,4.6,Ice-free Arctic port; long routing via Suez,SYNTHETIC_DEMO
+Samarinda,Indonesia,East Kalimantan,load,230,38,12.5,40000,Coking Coal;Limestone,Handysize;Supramax,1.20,3.5,River/anchorage loading via barges; draft limited,SYNTHETIC_DEMO
+Balikpapan,Indonesia,East Kalimantan,load,260,43,14.0,50000,Coking Coal;Limestone,Handysize;Supramax;Panamax,1.15,3.2,Anchorage transhipment; Panamax gearless part-laden,SYNTHETIC_DEMO
+Paradip,India,Odisha,discharge,320,50,18.0,45000,Coking Coal;Iron Ore;Limestone,Handysize;Supramax;Panamax;Capesize,1.30,4.5,Deep-draft East Coast port; Capesize on tide,SYNTHETIC_DEMO
+Visakhapatnam,India,Andhra Pradesh,discharge,300,48,18.1,40000,Coking Coal;Iron Ore;Limestone,Handysize;Supramax;Panamax;Capesize,1.40,5.0,Outer harbour deep berths; inner harbour draft limited,SYNTHETIC_DEMO
+Gangavaram,India,Andhra Pradesh,discharge,330,55,20.0,50000,Coking Coal;Iron Ore;Limestone,Handysize;Supramax;Panamax;Capesize,1.15,3.8,Deepest East Coast port; fully laden Capesize,SYNTHETIC_DEMO
+Gopalpur,India,Odisha,discharge,290,46,16.5,28000,Coking Coal;Iron Ore;Limestone,Handysize;Supramax;Panamax,1.20,4.6,Developing all-weather port; Capesize part-laden,SYNTHETIC_DEMO
+Dhamra,India,Odisha,discharge,320,50,18.5,42000,Coking Coal;Iron Ore;Limestone,Handysize;Supramax;Panamax;Capesize,1.10,3.9,Deep-draft port; mechanised bulk handling,SYNTHETIC_DEMO
+Sagar-Sandheads,India,West Bengal,discharge,240,40,11.5,18000,Coking Coal;Limestone;Iron Ore,Handysize;Supramax,1.55,6.5,Lightening/transhipment anchorage off the Hooghly,SYNTHETIC_DEMO
+Haldia,India,West Bengal,discharge,240,40,10.5,20000,Coking Coal;Iron Ore;Limestone,Handysize;Supramax,1.60,7.0,Tidal river dock; sustained draft limits large bulkers,SYNTHETIC_DEMO
