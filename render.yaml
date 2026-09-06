@@ -1,0 +1,24 @@
+# Render Blueprint - SIH26006 Intelligent Freight Forecasting & Vessel Chartering DSS
+# Deploys the existing FastAPI application as a free Render web service.
+# Spec: https://render.com/docs/blueprint-spec
+#
+# The app needs NO source changes to run here:
+#   * host/port come from the start command below ($PORT is set by Render)
+#   * static files and Jinja2 templates are resolved relative to main.py
+#   * every frontend API call and asset path is already root-relative
+#
+# Every figure the app returns is synthetic DEMO DATA - NOT REAL MARKET DATA.
+
+services:
+  - type: web
+    name: freight-forecast-sih26006
+    runtime: python
+    plan: free
+    region: singapore          # closest Render region to India; change if preferred
+    branch: main
+    buildCommand: "pip install --upgrade pip && pip install -r requirements.txt"
+    startCommand: "uvicorn main:app --host 0.0.0.0 --port $PORT"
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12.10"        # statsmodels 0.14.3 has no Python 3.13 wheel
